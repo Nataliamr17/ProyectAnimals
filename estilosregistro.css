@@ -32,6 +32,8 @@ body{
     border-top: 2px solid #ff851b;
     border-bottom: 2px solid #ff851b;
     position: absolute;
+    transition: all .5s ease;
+    cursor: pointer;
 }
 
 .contenedor-form .toggle span{
@@ -41,4 +43,11 @@ body{
 .contenedor-form .toggle:hover {
     border-top: 2px solid #0075d9;
     border-bottom: 2px solid #0075d9;
+}
+
+.contenedor-form h2 {
+    margin: 0 0 28px 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1px;
 }
