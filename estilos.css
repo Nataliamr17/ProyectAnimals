@@ -1,3 +1,37 @@
-* {
-    background-color: #0B0A3B;
+
+body{
+    background-image: url(img/fondo2.jpg);
+    font-family: 'Comic Neue', cursive;
+    background-size: cover;
+
+}
+.logo{
+    height: 500px;
+    width: 500px;
+    position: right;
+}
+h1,h2,h3{
+    color: white;
+}
+h1{
+    font-size: 60px;
+}
+.izquierda{
+    padding-top: 100px;
+    width: 550px;
+    height: 500px;
+    float: left;
+} 
+.derecha {
+    width: 550px;
+    height: 500px;
+    float: right;
+}
+.principal{
+    text-align: center;
+    display: block;
+    margin: 100px 100px 100px 100px;
+    height: 500px;
+    width: 1100px;
+    float: left;
 }
