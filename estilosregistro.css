@@ -15,7 +15,7 @@ body{
     background: rgba(0,0,0,.7);
     width: 100%;
     max-width: 500px;
-    margin: 48px auto;
+    margin: auto;
     color: white;
     border-radius: 5px;
     /*padding: 40px;*/
@@ -93,7 +93,7 @@ body{
 
 
 .contenedor-form input[type="submit"]:hover{
-    background: #33b5ff;
+    background: rgba(0,117,217,0.7);
 }
 
 .contenedor-form .reset-pass{
