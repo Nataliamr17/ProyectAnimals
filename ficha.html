@@ -8,11 +8,93 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilosregistro.css">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>esta es tu parte alberto</h1>
-    
+    <header class="formulariocentrado">
+    <div class="contenedor-form">
+        <div class="t">
+            
+        </div>
+
+        <div class="formulario">
+            <h2>Ficha del animal</h2>
+            <form action="#">
+                <label for="tipo2">Tipo de animal :</label>
+                <select name="tipo" id="tipo2">
+                        <option value="Perro">Perro</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Pajaro">Pajaro</option>
+                        <option value="Iguana">Iguana</option>
+                        <option value="Otro">Otro</option>
+                </select><br><br>
+                <input type="text" id="raza" placeholder="Raza" required>
+                <input type="number" id="edad" placeholder="Edad" required> 
+                <label for="provincia">Seleccione una provincia: </label>
+                <select id="provincia" value="Selecciona provincia">
+                    <option value='alava'>Álava</option>
+                    <option value='albacete'>Albacete</option>
+                    <option value='alicante'>Alicante/Alacant</option>
+                    <option value='almeria'>Almería</option>
+                    <option value='asturias'>Asturias</option>
+                    <option value='avila'>Ávila</option>
+                    <option value='badajoz'>Badajoz</option>
+                    <option value='barcelona'>Barcelona</option>
+                    <option value='burgos'>Burgos</option>
+                    <option value='caceres'>Cáceres</option>
+                    <option value='cadiz'>Cádiz</option>
+                    <option value='cantabria'>Cantabria</option>
+                    <option value='castellon'>Castellón/Castelló</option>
+                    <option value='ceuta'>Ceuta</option>
+                    <option value='ciudadreal'>Ciudad Real</option>
+                    <option value='cordoba'>Córdoba</option>
+                    <option value='cuenca'>Cuenca</option>
+                    <option value='girona'>Girona</option>
+                    <option value='laspalmas'>Las Palmas</option>
+                    <option value='granada'>Granada</option>
+                    <option value='guadalajara'>Guadalajara</option>
+                    <option value='guipuzcoa'>Guipúzcoa</option>
+                    <option value='huelva'>Huelva</option>
+                    <option value='huesca'>Huesca</option>
+                    <option value='illesbalears'>Illes Balears</option>
+                    <option value='jaen'>Jaén</option>
+                    <option value='acoruña'>A Coruña</option>
+                    <option value='larioja'>La Rioja</option>
+                    <option value='leon'>León</option>
+                    <option value='lleida'>Lleida</option>
+                    <option value='lugo'>Lugo</option>
+                    <option value='madrid'>Madrid</option>
+                    <option value='malaga'>Málaga</option>
+                    <option value='melilla'>Melilla</option>
+                    <option value='murcia'>Murcia</option>
+                    <option value='navarra'>Navarra</option>
+                    <option value='ourense'>Ourense</option>
+                    <option value='palencia'>Palencia</option>
+                    <option value='pontevedra'>Pontevedra</option>
+                    <option value='salamanca'>Salamanca</option>
+                    <option value='segovia'>Segovia</option>
+                    <option value='sevilla'>Sevilla</option>
+                    <option value='soria'>Soria</option>
+                    <option value='tarragona'>Tarragona</option>
+                    <option value='santacruztenerife'>Santa Cruz de Tenerife</option>
+                    <option value='teruel'>Teruel</option>
+                    <option value='toledo'>Toledo</option>
+                    <option value='valencia'>Valencia/Valéncia</option>
+                    <option value='valladolid'>Valladolid</option>
+                    <option value='vizcaya'>Vizcaya</option>
+                    <option value='zamora'>Zamora</option>
+                    <option value='zaragoza'>Zaragoza</option>
+                </select><br><br>
+                <input type="text" id="texto" placeholder="Descripción" required>
+               <label for="fotos">Selecciona fotos</label>
+               <input type="file" id="fotos" name="fotos" multiple><br><br>
+              <a href="rol.html"><input type="submit" value="Crear Ficha"></a> 
+            </form>
+            
+        </div>
+    </div>
+</header>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
