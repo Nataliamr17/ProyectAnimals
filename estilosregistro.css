@@ -54,7 +54,9 @@ body{
 
 .contenedor-form input[type="text"],
 .contenedor-form input[type="password"],
-.contenedor-form input[type="email"]{
+.contenedor-form input[type="email"],
+.contenedor-form input[type="number"],
+.contenedor-form input[type="file"]{
     outline: none;
     background: rgba(0,0,0,.5);
     display: block;
@@ -76,6 +78,7 @@ body{
 .contenedor-form input[type="email"]:focus {
     border-bottom: 4px solid #33b5ff;
 }
+.contenedor-form input[type="number"]
 
 .contenedor-form input[type="submit"]{
     background: #ff851b;
@@ -119,4 +122,15 @@ body{
 
 .contenedor-form .formulario:nth-child(2){
     display: block;
+}
+
+.formulariocentrado{
+    padding: 50px;
+    display: block;
+    margin: auto;
+    
+}
+
+.select{
+    
 }
