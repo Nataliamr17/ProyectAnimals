@@ -31,7 +31,7 @@
 
         <div class="formulario">
             <h2>Crea tu Cuenta</h2>
-            <form >
+            <form>
                 <input type="text" placeholder="Usuario" name="usuario" id="usuario" required>
                 <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
                 <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required>
@@ -58,7 +58,7 @@
 <script>
     $("#boton").on("click",function(){
        
-       
+       console.log("prueba1");
         var user = $("#usuario").val();
         var nombre = $("#nombre").val();
         var apellidos = $("#apellidos").val();
@@ -66,16 +66,19 @@
         var email = $("#email").val();
         var tlf = $("#tlf").val();
         var json = {
-            "user":user,"nombre":nombre,"apellidos":apellidos,"password":password,"email":email,"tlf":tlf
+            "user":user,"nombre":nombre,"apellidos":apellidos,"password":password,"email":email,"telefono":tlf
         }
         $.ajax({
             type:"post",
             url:"http://127.0.0.1:8000/users",
-            data:{
-                "json":json
+            dataType: 'json',
+            data: {
+                json: JSON.stringify(json)
             },
-            success:function(res){
-                console.log(res)
+            success:function(response){
+                console.log(response);
+                console.log("Esto ha entrao");
+                alert.log("Se ha creado correctamente");
             }
         })
         
