@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyect Animals</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/login.js"></script>
+</head>
+<body>
+<form >
+    <input type="text" placeholder="Usuario" name="usuario" id="usuario" required>
+    <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+    <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required>
+    <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
+    <input type="email" placeholder="Correo Electronico" name="email" id="email" required>
+    <input type="text" placeholder="Teléfono" name="tlf" id="tlf">
+ <input type="submit" id="boton" value="Registrarse">
+</form>
+</body>
+<script>
+    $("#boton").on("click",function(){
+       
+       console.log("prueba1");
+        var user = $("#usuario").val();
+        var nombre = $("#nombre").val();
+        var apellidos = $("#apellidos").val();
+        var password =$("#pass").val();
+        var email = $("#email").val();
+        var tlf = $("#tlf").val();
+        var json = {
+            "user":user,"nombre":nombre,"apellidos":apellidos,"password":password,"email":email,"tlf":tlf
+        }
+        $.ajax({
+            type:"post",
+            url:"http://127.0.0.1:8000/users",
+            data:{
+                "json":json
+            },
+            success:function(res){
+                console.log(res);
+                console.log("Esto ha entrao");
+            }
+        })
+        
+    })
+    </script>
+    </html>

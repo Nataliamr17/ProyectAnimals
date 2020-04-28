@@ -31,14 +31,14 @@
 
         <div class="formulario">
             <h2>Crea tu Cuenta</h2>
-            <form action="#">
-                <input type="text" placeholder="Usuario" required>
-                <input type="text" placeholder="Nombre" required>
-                <input type="text" placeholder="Apellidos" required>
-                <input type="password" placeholder="Contraseña" required>
-                <input type="email" placeholder="Correo Electronico" required>
-                <input type="text" placeholder="Teléfono">
-              <a href="rol.html"><input type="submit" value="Registrarse"></a>
+            <form >
+                <input type="text" placeholder="Usuario" name="usuario" id="usuario" required>
+                <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+                <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required>
+                <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
+                <input type="email" placeholder="Correo Electronico" name="email" id="email" required>
+                <input type="text" placeholder="Teléfono" name="tlf" id="tlf">
+             <input type="submit" id="boton" value="Registrarse">
             </form>
         </div>
         <div class="reset-pass">
@@ -55,4 +55,30 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
+<script>
+    $("#boton").on("click",function(){
+       
+       
+        var user = $("#usuario").val();
+        var nombre = $("#nombre").val();
+        var apellidos = $("#apellidos").val();
+        var password =$("#pass").val();
+        var email = $("#email").val();
+        var tlf = $("#tlf").val();
+        var json = {
+            "user":user,"nombre":nombre,"apellidos":apellidos,"password":password,"email":email,"tlf":tlf
+        }
+        $.ajax({
+            type:"post",
+            url:"http://127.0.0.1:8000/users",
+            data:{
+                "json":json
+            },
+            success:function(res){
+                console.log(res)
+            }
+        })
+        
+    })
+    </script>
 </html>
