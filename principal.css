@@ -1,0 +1,28 @@
+
+body{
+    background-image: url(img/fondo2.jpg);
+    font-family: 'Comic Neue', cursive;
+    background-size: cover;
+
+}
+.logo{
+    height: 100px;
+    width: 100px;
+    position: left;
+}
+.menu a{
+    background-color: hotpink;
+    color: white;
+    text-decoration: none;
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding: 20px;
+}
+.menu a:hover{
+    background-color: red;
+    color: black;
+}
+lateral{
+    
+}

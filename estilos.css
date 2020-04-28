@@ -45,3 +45,17 @@ h1{
     height: 500px;
     float: right;
 }
+/*  --- PAGINA PRINCIPAL --- */
+.menu a{
+    background-color: hotpink;
+    color: white;
+    text-decoration: none;
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding: 20px;
+}
+.menu a:hover{
+    background-color:white;
+    color: black;
+}
