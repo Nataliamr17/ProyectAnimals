@@ -34,13 +34,14 @@
         var email = $("#email").val();
         var tlf = $("#tlf").val();
         var json = {
-            "user":user,"nombre":nombre,"apellidos":apellidos,"password":password,"email":email,"tlf":tlf
+            "user":user,"nombre":nombre,"apellidos":apellidos,"password":password,"email":email,"telefono":tlf
         }
         $.ajax({
             type:"post",
             url:"http://127.0.0.1:8000/users",
-            data:{
-                "json":json
+            dataType: 'json',
+            data: {
+                json: JSON.stringify(json)
             },
             success:function(res){
                 console.log(res);
