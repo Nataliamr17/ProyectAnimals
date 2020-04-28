@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="estilosregistro.css">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="formulariocentrado">
@@ -21,18 +24,18 @@
         <div class="formulario">
             <h2>Ficha del animal</h2>
             <form action="#">
-                <label for="tipo2">Tipo de animal :</label>
-                <select name="tipo" id="tipo2">
+                <label for="tipo">Tipo de animal :</label>
+                <select name="tipo" id="tipo">
                         <option value="Perro">Perro</option>
                         <option value="Gato">Gato</option>
                         <option value="Pajaro">Pajaro</option>
                         <option value="Iguana">Iguana</option>
                         <option value="Otro">Otro</option>
                 </select><br><br>
-                <input type="text" id="raza" placeholder="Raza" required>
-                <input type="number" id="edad" placeholder="Edad" required> 
+                <input type="text" id="raza" name="raza" placeholder="Raza" required>
+                <input type="number" id="edad" name="edad" placeholder="Edad" required> 
                 <label for="provincia">Seleccione una provincia: </label>
-                <select id="provincia" value="Selecciona provincia">
+                <select id="provincia" name="provincia" value="Selecciona provincia">
                     <option value='alava'>Álava</option>
                     <option value='albacete'>Albacete</option>
                     <option value='alicante'>Alicante/Alacant</option>
@@ -86,17 +89,25 @@
                     <option value='zamora'>Zamora</option>
                     <option value='zaragoza'>Zaragoza</option>
                 </select><br><br>
-                <input type="text" id="texto" placeholder="Descripción" required>
+                
+                <input type="text" id="texto" name="texto" placeholder="Descripción" required>
                <label for="fotos">Selecciona fotos</label>
                <input type="file" id="fotos" name="fotos" multiple><br><br>
-              <a href="rol.html"><input type="submit" value="Crear Ficha"></a> 
+              <a href="rol.html"><input type="submit" value="Crear Ficha" id="boton"></a> 
             </form>
             
         </div>
     </div>
 </header>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
+<script>
+$("#boton").on("click",function(){
+   
+    console.log($("#tipo").val());
+    var descripcion = ($("#texto").val());
+    var animal = ($("#tipo").val());
+    var raza = ($("#tipo").val());
+})
+</script>
 </html>
