@@ -34,6 +34,9 @@
                 </select><br><br>
                 <input type="text" id="raza" name="raza" placeholder="Raza" required>
                 <input type="number" id="edad" name="edad" placeholder="Edad" required> 
+                <select id="comunidad" name="comunidad" value="Selecciona Comunidad Autónoma">
+
+                </select>
                 <label for="provincia">Seleccione una provincia: </label>
                 <select id="provincia" name="provincia" value="Selecciona provincia">
                   
@@ -41,7 +44,9 @@
                 
                 <input type="text" id="texto" name="texto" placeholder="Descripción" required>
                <label for="fotos">Selecciona fotos</label>
-               <input type="file" id="fotos" name="fotos" multiple><br><br>
+               <input type="file" id="foto1" name="foto1" ><br>
+               <input type="file" id="foto2" name="foto2" ><br>
+               <input type="file" id="foto2" name="foto3" ><br>
               <a href="rol.html"><input type="submit" value="Crear Ficha" id="boton"></a> 
             </form>
             
@@ -57,9 +62,31 @@ $("#boton").on("click",function(){
     var tipo = $("#tipo").val();
     var edad = $("#edad").val();
     var raza = $("#raza").val();
-
+    var comunidad = $("#comunidad").val();
+    var provincia = $("#provincia").val();
+    var detalles = $("#texto").val();
+    var image_1 =$("#foto1").val();
+    var image_2 = $("#foto2").val();
+    var image_3 = $("#foto3").val();
+    var json={
+        "tipo":tipo,"edad":edad,"raza":raza,"comunidad":comunidad,
+    }
 
     
 })
+
+$.ajax({
+            type:"post",
+            url:"http://127.0.0.1:8000/users",
+            dataType: 'json',
+            data: {
+                json: JSON.stringify(json)
+            },
+            success:function(response){
+                console.log(response);
+                console.log("Esto ha entrao");
+                alert.log("Se ha creado correctamente");
+            }
+        })
 </script>
 </html>
