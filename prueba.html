@@ -13,7 +13,7 @@
     <script src="js/login.js"></script>
 </head>
 <body>
-<form >
+
     <input type="text" placeholder="Usuario" name="usuario" id="usuario" required>
     <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
     <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required>
@@ -21,7 +21,7 @@
     <input type="email" placeholder="Correo Electronico" name="email" id="email" required>
     <input type="text" placeholder="Teléfono" name="tlf" id="tlf">
  <input type="submit" id="boton" value="Registrarse">
-</form>
+
 </body>
 <script>
     $("#boton").on("click",function(){
@@ -44,7 +44,7 @@
                 json: JSON.stringify(json)
             },
             success:function(response){
-                console.log(response);
+                alert(response);
                 console.log("Esto ha entrao");
             }
         })
