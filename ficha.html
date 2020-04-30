@@ -174,48 +174,48 @@ $.ajax({
                 if (response.code === 404) {
                     console.log(response)
                     console.log('1')
-                    if (typeof response.errors.tipo !== 'undefined') {
+                    if (typeof response.message.tipo !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.tipo + "</div>";
                         $("#respuesta").html(codigo)
                         console.log('2')
                     }
-                    if (typeof response.errors.edad !== 'undefined') {
+                    if (typeof response.message.edad !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.edad + "</div>";
                         $("#respuesta").html(codigo)
                         console.log('entramos2')
                         console.log('3')
                     }
-                    if (typeof response.errors.raza !== 'undefined') {
+                    if (typeof response.message.raza !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.raza + "</div>";
                         $("#respuesta").html(codigo)
                         console.log('4')
                     }
-                    if (typeof response.errors.ciudad !== 'undefined') {
+                    if (typeof response.message.ciudad !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.ciudad + "</div>";
                         $("#respuesta").html(codigo)
                         console.log('5')
                     }
-                    if (typeof response.errors.provincia !== 'undefined') {
+                    if (typeof response.message.provincia !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.provincia + "</div>";
                         $("#respuesta").html(codigo)
                         console.log('6')
                     }
-                    if (typeof response.errors.detalles !== 'undefined') {
+                    if (typeof response.message.detalles !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.detalles + "</div>";
                         $("#respuesta").html(codigo)
                         console.log('7')
                     }
-                    if (typeof response.errors.image_1 !== 'undefined') {
+                    if (typeof response.message.image_0 !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.image_1 + "</div>";
                         $("#respuesta").html(codigo)
                         console.log('8')
                     }
-                    if (typeof response.errors.image_2 !== 'undefined') {
+                    if (typeof response.message.image_1 !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.image_2 + "</div>";
                         $("#respuesta").html(codigo)
                         console.log('9')
                     }
-                    if (typeof response.errors.image_3 !== 'undefined') {
+                    if (typeof response.message.image_4 !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.image_3 + "</div>";
                         $("#respuesta").html(codigo)
                         console.log('10')
