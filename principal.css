@@ -23,6 +23,15 @@ body{
     background-color: red;
     color: black;
 }
-lateral{
+.animal{
+    background-color: #46474B;
+    color: white;
+    width: 220px;
     
+}
+.caja{
+   
+    color: #060F31;
+    font-size: 15px;
+    font-weight: bold;
 }
