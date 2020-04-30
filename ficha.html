@@ -36,7 +36,7 @@
                 <input type="number" id="edad" name="edad" placeholder="Edad" required> 
                 <label for="comunidad">Seleccione una C.Autónoma:  </label>
                 <select id="comunidad" name="comunidad" value="Selecciona Comunidad Autónoma">
-	                <option value="0">Andaluci­a</option>
+	                <option value="0" >Andaluci­a</option>
 	                <option value="1">Aragón</option>
 	                <option value="2">Principado de Asturias</option>
 	                <option value="3">Islas Baleares</option>
@@ -84,7 +84,7 @@
         crossorigin="anonymous"></script>
 </body>
 <script>
-/*$("#tipo option").val(function(){
+/*$("#tipo".option).val(function(){
     if ($(this).val == "Otro")
     alert("Debe indicar en 'Descripcion' su tipo de animal.")
 })*/
@@ -137,14 +137,31 @@ $("#boton").on("click",function(){
         "tipo":tipo,"edad":edad,"raza":raza,"ciudad":ciudad,"provincia":provincia,"detalles":detalles,"image_1":image_1,"image_2":image_2,"image_3":image_3
     }
 
-    
+    /*Cambiar "Ciudad" por "Comunidad"*/
 
+/*jQuery(function($){
+    var fotos = ["#foto1","foto2","foto3"]
+    $('#fotos').validate({
+        rules:{},
+        messages:{},
+        submitHandler: function(){
+            return false
+        }
 
+    })
+
+});*/
+/*$('#fotos').rules('add',{
+    accept: "image/jpeg"|"image/jpg"|"image/png"
+})*/
 
 $.ajax({
-            type:"get",
+            type:"POST",
             url:"http://127.0.0.1:8000/adp",
             dataType: 'json',
+            headers:{
+                Authorization:localStorage.getItem("token")
+            } ,
             data: {
                 json: JSON.stringify(json)
             },
@@ -152,8 +169,10 @@ $.ajax({
                 if (response.code === 200) {
                     var codigo = "<div class='alert alert-success' role='alert'> " + response.message + "  </div>";
                     $("#respuesta").html(codigo)
+                    console.log("Esto pasa por aqui")
                 }
                 if (response.code === 404) {
+                    console.log(response)
                     console.log('1')
                     if (typeof response.errors.tipo !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.tipo + "</div>";

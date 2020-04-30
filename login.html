@@ -21,18 +21,18 @@
 
             <div class="formulario">
                 <h2>Iniciar Sesión</h2>
-                <form action="#">
-                    <input type="text" placeholder="Usuario" required>
-                    <input type="password" placeholder="Contraseña" required>
-                    <a href="rol.html"><input type="submit" value="Iniciar Sesión"></a>
-                </form>
+               
+                    <input type="email" placeholder="Email" id="Correo2" required>
+                    <input type="password" placeholder="Contraseña" id="Contraseña2" required>
+                   <input type="submit" id="boton2" value="Iniciar Sesión">
+                
             </div>
 
 
             <div class="formulario">
                 <h2>Crea tu Cuenta</h2>
 
-                <input type="text" placeholder="Usuario" name="usuario" id="usuario">
+                <input type="text" placeholder="Usuario" name="usuario" id="usuario" required>
                 <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
                 <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required>
                 <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
@@ -77,6 +77,7 @@
             "password": password,
             "email": email,
             "telefono": tlf
+            
         };
 
         $.ajax({
@@ -85,6 +86,7 @@
             dataType: 'json',
             data: {
                 json: JSON.stringify(json)
+               
             },
             success: function (response) {
                 if (response.code === 200) {
@@ -129,6 +131,35 @@
         })
 
     })
+    $("#boton2").on("click", function (){
+        var password = $("#Contraseña2").val();
+        var email = $("#Correo2").val();
+        console.log(password);
+        var loggear = {
+            "email":email,"password":password
+        };
+        $.ajax({
+            type: "post",
+            url: "http://127.0.0.1:8000/users/login",
+            dataType: 'json',
+            data: {
+                json: JSON.stringify(loggear)
+               
+            },
+            success:function(response){
+                if (response.code === 404) {
+                    
+                } 
+                else{
+                    console.log("Holaestoyaqui")
+                    localStorage.setItem("token", response);
+                    document.location.href= "rol.html";
+                }
+            }
+        })
+    })
+    
+
+    
 </script>
 </html>
-
