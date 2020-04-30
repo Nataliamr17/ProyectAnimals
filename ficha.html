@@ -36,7 +36,7 @@
                 <input type="number" id="edad" name="edad" placeholder="Edad" required> 
                 <label for="comunidad">Seleccione una C.Autónoma:  </label>
                 <select id="comunidad" name="comunidad" value="Selecciona Comunidad Autónoma" required>
-	                <option value="Andalucia" >Andaluci­a</option>
+	                <option value=0 >Andaluci­a</option>
 	                <option value="Aragón">Aragón</option>
 	                <option value="Principado de Asturias">Principado de Asturias</option>
 	                <option value="Islas Baleares">Islas Baleares</option>
@@ -58,7 +58,7 @@
                    
                 </select><br><br>
                 <label for="provincia">Seleccione su provincia:</label>
-                <br><select id="provincia" name="provincia" value="Selecciona provincia"required>
+                <br><select id="provincia" name="provincia" value="Selecciona provincia">
                   <option value=""></option>
                 </select><br><br>
                 
@@ -115,7 +115,7 @@ var options = [
    /*La Rioja*/ "<option value='La Rioja'>La Rioja</option>",
    /*C.Valenciana*/ "<option value='Alicante'>Alicante</option><option value='Valencia'>Valencia</option><option value='Castellón'>Castellón</option>",
     /*Ceuta*/"<option value='Ceuta'>Ceuta</option>",
-   /*Melilla*/ "<option value='Melilla'>Melilla</option",
+   /*Melilla*/ "<option value='Melilla'>Melilla</option>",
        
 ];
 });
@@ -164,10 +164,10 @@ $.ajax({
             } ,
             data: {
                 json: JSON.stringify(json)
-            },
+            }, 
             success: function (response) {
                 if (response.code === 200) {
-                    var codigo = "<div class='alert alert-success' role='alert'> " + response.message + "  </div>";
+                    var codigo = "<div class='alert alert-success' role='alert'> " + response.message + " Haz click <a href='principal.html'>aquí</a> para ir a la página principal </div>";
                     $("#respuesta").html(codigo)
                     console.log("Esto pasa por aqui")
                 }
