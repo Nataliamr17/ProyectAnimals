@@ -57,6 +57,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 <script>
+    console.log("Entra");
     $("#boton").on("click",function(){
        
        console.log("prueba1");
@@ -66,11 +67,11 @@
         var password =$("#pass").val();
         var email = $("#email").val();
         var tlf = $("#tlf").val();
-        
-        
+                
         var json = {
             "user":user,"nombre":nombre,"apellidos":apellidos,"password":password,"email":email,"telefono":tlf
         }
+        console.log(json);
         $.ajax({
             type:"post",
             url:"http://127.0.0.1:8000/users",
@@ -79,9 +80,7 @@
                 json: JSON.stringify(json)
             },
             success:function(response){
-                
-                
-                
+                    
                 if(response.code === 200){
                     var codigo = "<div class='alert alert-success' role='alert'> "+response.message+"  </div>";
                     $("#respuesta").html(codigo)
