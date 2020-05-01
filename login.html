@@ -22,9 +22,10 @@
             <div class="formulario">
                 <h2>Iniciar Sesión</h2>
                
-                    <input type="email" placeholder="Email" id="Correo2" required>
-                    <input type="password" placeholder="Contraseña" id="Contraseña2" required>
-                   <input type="submit" id="boton2" value="Iniciar Sesión">
+                    <input type="email" placeholder="Email" id="Correo2">
+                    <input type="password" placeholder="Contraseña" id="Contraseña2">
+                    <div id="loginerrors"></div>
+                    <input type="submit" id="boton2" value="Iniciar Sesión">
                 
             </div>
 
@@ -42,8 +43,9 @@
                 <input type="submit" id="boton" value="Registrarse">
 
             </div>
+            <div id="forgotpass"></div>
             <div class="reset-pass">
-                <a href="#">He olvidado mi contraseña</a>
+                <a id="idforgot"><h4>He olvidado mi contraseña</h4></a>
             </div>
         </div>
     </div>
@@ -148,6 +150,10 @@
             success:function(response){
                 if (response.code === 404) {
                     console.log(response)
+                    if(typeof response.message !== 'undefined'){
+                        var error = "<div class='alert alert-danger' role='alert'> "+ response.message +" </div>"
+                        $("#loginerrors").append(error)
+                    }
                 } 
                 else{
                     console.log("Holaestoyaqui")
@@ -155,9 +161,13 @@
                     document.location.href="rol.html";
                 }
             }
-        })
+        }) 
     })
-    
+    $("#idforgot").on("click", function(){
+         $("#forgotpass").empty()
+            var pass= "<div class='alert alert-info' role='alert'>Envía un correo a admin@proyectanimals.com con tu usuario, nombre y apellidos para recuperar la contraseña</div>"
+            $("#forgotpass").append(pass)
+        })
 
     
 </script>
