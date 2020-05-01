@@ -134,7 +134,6 @@
     $("#boton2").on("click", function (){
         var password = $("#Contraseña2").val();
         var email = $("#Correo2").val();
-        console.log(password);
         var loggear = {
             "email":email,"password":password
         };
@@ -148,12 +147,12 @@
             },
             success:function(response){
                 if (response.code === 404) {
-                    
+                    console.log(response)
                 } 
                 else{
                     console.log("Holaestoyaqui")
                     localStorage.setItem("token", response);
-                    document.location.href= "rol.html";
+                    document.location.href="rol.html";
                 }
             }
         })
