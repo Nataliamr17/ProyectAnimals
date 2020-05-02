@@ -230,9 +230,9 @@ $("#boton").on("click",function(){
             alert("El campo es obligatorio, seleccione la provincia")
         }else if( typeof detalles === "undefined" ){
             alert("El campo es obligatorio, introduzca detalles acerca de su animal")
-            else if( typeof sexo === "undefined" ){
+            
+        }else if( typeof sexo === "undefined" ){
             alert("El campo es obligatorio, seleccione el sexo de su animal")
-        }
         }else if(detalles.lenght > 255){ /*Validar que si el tamaño del num es inferior a 9 digitos o superior meta alert*/
             alert("Los detalles pueden tener un máximo de 255 caracteres")
         }else if (tipo.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])|| edad.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||raza.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||ciudad.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||nombre.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||provincia.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||detalles.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||sexo.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])){
