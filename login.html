@@ -38,9 +38,9 @@
                 <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required>
                 <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
                 <input type="email" placeholder="Correo Electronico" name="email" id="email" required>
-                <input type="number" placeholder="Teléfono" name="tlf" id="tlf">
+                <input type="number" placeholder="Teléfono" name="tlf" id="tlf" required>
                 <div id="respuesta"></div>
-                <input type="submit" id="boton" value="Registrarse">
+                <input type="submit" id="boton" value="Registrarse" onsubmit="return ValidateLoginForm()">
 
             </div>
             <div id="forgotpass"></div>
@@ -63,6 +63,10 @@
         crossorigin="anonymous"></script>
 </body>
 <script>
+
+
+    
+   
     $("#boton").on("click", function () {
         var user = $("#usuario").val();
         var nombre = $("#nombre").val();
@@ -70,9 +74,23 @@
         var password = $("#pass").val();
         var email = $("#email").val();
         var tlf = $("#tlf").val();
-
-
-        var json = {
+        if(typeof user === "undefined"){
+            alert("El campo es obligatorio")/*Estos son para validar que no estan vacios*/
+        }else if ( typeof nombre === "undefined" ){
+            alert("El campo  es obligatorio")
+        }else if( typeof apellidos === "undefined" ){
+            alert("El campo es obligatorio")
+        }else if(!tlf.lenght == 9){
+            alert("El teléfono debe tener  9 digitos")
+        }else if(!email.includes(["hotmail.com"||"hotmail.es"||"gmail.com"||"gmail.es"||"yahoo.es"||"yahoo.com"||"outlook.com"||"outlook.es"||"protonmail.com"||"protonmail.es"||"@"])){
+            alert("Introduce un correo válido")
+        }else if (user.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])|| nombre.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||apellidos.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||password.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||email.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||tlf.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])){
+            alert("Eso no se hace")
+        }else if(password.lenght < 4){
+            alert("Introduzca una contraseña mas larga")
+        }
+        else {
+            var json = {
             "user": user,
             "nombre": nombre,
             "apellidos": apellidos,
@@ -105,7 +123,7 @@
                     if (typeof response.errors.nombre !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.nombre + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('entramos2')
+                       
                         console.log('3')
                     }
                     if (typeof response.errors.apellidos !== 'undefined') {
@@ -132,6 +150,10 @@
             }
         })
 
+        }
+
+
+        
     })
     $("#boton2").on("click", function (){
         var password = $("#Contraseña2").val();
@@ -148,15 +170,22 @@
                
             },
             success:function(response){
+                console.log(response)
                 if (response.code === 404) {
                     console.log(response)
                     if(typeof response.message !== 'undefined'){
                         var error = "<div class='alert alert-danger' role='alert'> "+ response.message +" </div>"
                         $("#loginerrors").append(error)
                     }
+                }else if(response.status === "error"){
+                    if(typeof response.message !== 'undefined'){
+                        var error = "<div class='alert alert-danger' role='alert'> "+ response.message +" </div>"
+                        $("#loginerrors").append(error)
+                    }
                 } 
                 else{
-                    console.log("Holaestoyaqui")
+                    
+                    console.log(response)
                     localStorage.setItem("token", response);
                     document.location.href="rol.html";
                 }
@@ -168,7 +197,5 @@
             var pass= "<div class='alert alert-info' role='alert'>Envía un correo a admin@proyectanimals.com con tu usuario, nombre y apellidos para recuperar la contraseña</div>"
             $("#forgotpass").append(pass)
         })
-
-    
 </script>
 </html>

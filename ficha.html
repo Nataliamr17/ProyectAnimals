@@ -38,6 +38,7 @@
                 </select><br><br>
                 <input type="text" id="raza" name="raza" placeholder="Raza" required>
                 <input type="text" id="edad" name="edad" placeholder="Edad" > 
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
                 <label for="sexo">Seleccione su género:</label><br>
                 <select id="sexo" name="sexo" value="Seleccione su sexo"Required>
                     <option value="Masculino">Macho</option>
@@ -45,37 +46,34 @@
                 </select><br><br>
                 <label for="comunidad">Seleccione una C.Autónoma:  </label>
                 <select id="comunidad" name="comunidad" value="Selecciona Comunidad Autónoma" required>
-	                <option value="0" >Andaluci­a</option>
-	                <option value="Aragón">Aragón</option>
-	                <option value="Principado de Asturias">Principado de Asturias</option>
-	                <option value="Islas Baleares">Islas Baleares</option>
-	                <option value="País Vasco">Paí­s Vasco</option>
-	                <option value="Islas Canarias">Islas Canarias</option>
-	                <option value="Cantabria">Cantabria</option>
-	                <option value="Castilla-La Mancha">Castilla-La Mancha</option>
-	                <option value="Castilla y León">Castilla y León</option>
-	                <option value="Cataluña">Cataluña</option>
-	                <option value="Extremadura">Extremadura</option>
-	                <option value="Galicia">Galicia</option>
-	                <option value="Comunidad de Madrid">Comunidad de Madrid</option>
-	                <option value="Región de Murcia">Región de Murcia</option>
-	                <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
+	                <option value="Andalucia"  >Andaluci­a</option>
+	                <option value="Aragón" >Aragón</option>
+	                <option value="Principado de Asturias" >Principado de Asturias</option>
+	                <option value="Islas Baleares" >Islas Baleares</option>
+	                <option value="País Vasco" >Paí­s Vasco</option>
+	                <option value="Islas Canarias" >Islas Canarias</option>
+	                <option value="Cantabria" >Cantabria</option>
+	                <option value="Castilla-La Mancha" >Castilla-La Mancha</option>
+	                <option value="Castilla y León" >Castilla y León</option>
+	                <option value="Cataluña" >Cataluña</option>
+	                <option value="Extremadura" >Extremadura</option>
+	                <option value="Galicia" >Galicia</option>
+	                <option value="Comunidad de Madrid" >Comunidad de Madrid</option>
+	                <option value="Región de Murcia" >Región de Murcia</option>
+	                <option value="Comunidad Foral de Navarra" >Comunidad Foral de Navarra</option>
 	                <option value="La Rioja">La Rioja</option>
-	                <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+	                <option value="Comunidad Valenciana" >Comunidad Valenciana</option>
 	                <option value="Ceuta">Ceuta</option>
-                    <option value="Melilla">Melilla</option>
+                    <option value="Melilla" >Melilla</option>
                    
                 </select><br><br>
                 <label for="provincia">Seleccione su provincia:</label>
                 <br><select id="provincia" name="provincia" value="Selecciona provincia">
-                  <option value=""></option>
+                  
                 </select><br><br>
                 
                 <input type="text" id="texto" name="texto" placeholder="Descripción" >
                <label for="fotos">Selecciona fotos</label>
-               <input type="file" id="foto1" name="foto1" ><br>
-               <input type="file" id="foto2" name="foto2" ><br>
-               <input type="file" id="foto2" name="foto3" ><br>
                <div id="respuesta"></div>
              <input type="submit" value="Crear Ficha" id="boton">
             
@@ -96,53 +94,129 @@
 
 
 $(document).ready(function() {
+
+
 /*CAMBIAR FUNCION PARA PODER COGER LAS PROVINCIAS CON ALGO QUE NO SEA EL VALUE*/
 $("#comunidad").change(function() {
     var val = $(this).val();
-    $("#provincia").html(options[val]);
+    if(val == "Andalucia"){
+        console.log("Hola")
+        $("#provincia").empty()
+        var andalucia ="<option value='Granada'>Granada</option><option value='Málaga'>Málaga</option><option value='Sevilla'>Sevilla</option><option value='Huelva'>Huelva</option><option value='Almería'>Almería</option><option value='Cordoba'>Cordoba</option><option value='Cádiz'>Cádiz</option><option value='Jaén'>Jaén</option>"
+        $("#provincia").append(andalucia)
+    }
+    if(val =="Aragón"){
+        $("#provincia").empty()
+        var Aragon ="<option value='Huesca'>Huesca</option><option value='Zaragoza'>Zaragoza</option><option value='Teruel'>Teruel</option>"
+        $("#provincia").append(Aragon)
+    }
+    if(val =="Principado de Asturias"){
+        $("#provincia").empty()
+        var Asturias ="<option value='Asturias'>Asturias</option>"
+        $("#provincia").append(Asturias)
+    }
+    if(val =="Islas Baleares"){
+        $("#provincia").empty()
+        var Baleares ="<option value='Palma de Mallorca'>Palma de mallorca</option><option value='Menorca'>Menorca</option><option value='Ibiza'>Ibiza</option>"
+        $("#provincia").append(Baleares)
+    }
+    if(val =="País Vasco"){
+        $("#provincia").empty()
+        var Pvasco ="<option value='Álava'>Álava</option><option value='Vizcaya'>Vizcaya</option><option value='Guipuzcoa'>Guipuzcoa</option>"
+        $("#provincia").append(Pvasco)
+    }
+    if(val =="Islas Canarias"){
+        $("#provincia").empty()
+        var Canarias ="<option value='Santa cruz de tenerife'>Santa cruz de tenerife</option><option value='Las palmas de gran canaria'>Las palmas de gran canaria</option><option value='Lanzarote'>Lanzarote</option><option value='Fuerteventura'>Fuerteventura</option><option value='La palma'>La palma</option><option value='Hierro'>Hierro</option><option value='La gomera'>La gomera</option>"
+        $("#provincia").append(Canarias)
+    }
+    if(val =="Cantabria"){
+        $("#provincia").empty()
+        var Cantabria ="<option value='Cantabria'>Cantabria</option>"
+        $("#provincia").append(Cantabria)
+    }
+    if(val =="Castilla-La Mancha"){
+        $("#provincia").empty()
+        var Mancha ="<option value='Toledo'>Toledo</option><option value='Guadalajara'>Guadalajara</option><option value='Cuenca'>Cuenca</option><option value='Albacete'>Albacete</option><option value='Ciudad Real'>Ciudad Real</option>"
+        $("#provincia").append(Mancha)
+    }
+    if(val =="Castilla y León"){
+        $("#provincia").empty()
+        var Leon ="<option value='León'>León</option><option value='Palencia'>Palencia</option><option value='Valladolid'>Valladolid</option><option value='Salamanca'>Salamanca</option><option value='Zamora'>Zamora</option><option value='Ávila'>Ávila</option><option value='Segovia'>Segovia</option><option value='Burgos'>Burgos</option><option value='Soria'>Soria</option>"
+        $("#provincia").append(Leon)
+    }
+    if(val =="Cataluña"){
+        $("#provincia").empty()
+        var Cataluña ="<option value='Barcelona'>Barcelona</option><option value='Tarragona'>Tarragona</option><option value='Lleida'>Lleida</option><option value='Girona'>Girona</option>"
+        $("#provincia").append(Cataluña)
+    }
+    if(val =="Extremadura"){
+        $("#provincia").empty()
+        var Extremadura ="<option value='Badajoz'>Badajoz</option><option value='Cáceres'>Cáceres</option>"
+        $("#provincia").append(Extremadura)
+    }
+    if(val =="Galicia"){
+        $("#provincia").empty()
+        var Galicia ="<option value='A Coruña'>A Coruña</option><option value='Lugo'>Lugo</option><option value='Pontevedra'>Pontevedra</option><option value='Ourense'>Ourense</option>"
+        $("#provincia").append(Galicia)
+    }
+    if(val =="Comunidad de Madrid"){
+        $("#provincia").empty()
+        var Madrid ="<option value='Madrid'>Madrid</option>"
+        $("#provincia").append(Madrid)
+    }
+    if(val =="Región de Murcia"){
+        $("#provincia").empty()
+        var Murcia ="<option value='Murcia'>Murcia</option>"
+        $("#provincia").append(Murcia)
+    }
+    if(val =="Comunidad Foral de Navarra"){
+        $("#provincia").empty()
+        var Navarra ="<option value='Navarra'>Navarra</option>"
+        $("#provincia").append(Navarra)
+    }
+    if(val =="La Rioja"){
+        $("#provincia").empty()
+        var Rioja ="<option value='La Rioja'>La Rioja</option>"
+        $("#provincia").append(Rioja)
+    }
+    if(val =="Comunidad Valenciana"){
+        $("#provincia").empty()
+        var CV ="<option value='Alicante'>Alicante</option><option value='Valencia'>Valencia</option><option value='Castellón'>Castellón</option>"
+        $("#provincia").append(CV)
+    }
+    if(val =="Ceuta"){
+        $("#provincia").empty()
+        var Ceuta ="<option value='Ceuta'>Ceuta</option>"
+        $("#provincia").append(Ceuta)
+    }
+    if(val =="Melilla"){
+        $("#provincia").empty()
+        var Melilla ="<option value='Melilla'>Melilla</option>"
+        $("#provincia").append(Melilla)
+    }
+});
 });
 
-var options = [
-   /*Andalucia*/ "<option value='Granada'>Granada</option><option value='Málaga'>Málaga</option><option value='Sevilla'>Sevilla</option><option value='Huelva'>Huelva</option><option value='Almería'>Almería</option><option value='Cordoba'>Cordoba</option><option value='Cádiz'>Cádiz</option><option value='Jaén'>Jaén</option>",
-    /*Aragón*/"<option value='Huesca'>Huesca</option><option value='Zaragoza'>Zaragoza</option><option value='Teruel'>Teruel</option>",
-    /*Asturias*/"<option value='Asturias'>Asturias</option>",
-   /*Baleares*/ "<option value='Palma de Mallorca'>Palma de mallorca</option><option value='Menorca'>Menorca</option><option value='Ibiza'>Ibiza</option>",
-   /*P.Vasco*/ "<option value='Álava'>Álava</option><option value='Vizcaya'>Vizcaya</option><option value='Guipuzcoa'>Guipuzcoa</option>",
-    /*Canarias*/"<option value='Santa cruz de tenerife'>Santa cruz de tenerife</option><option value='Las palmas de gran canaria'>Las palmas de gran canaria</option><option value='Lanzarote'>Lanzarote</option><option value='Fuerteventura'>Fuerteventura</option><option value='La palma'>La palma</option><option value='Hierro'>Hierro</option><option value='La gomera'>La gomera</option>",
-   /*Cantabria*/ "<option value='Cantabria'>Cantabria</option>",
-    /*C.La Mancha*/"<option value='Toledo'>Toledo</option><option value='Guadalajara'>Guadalajara</option><option value='Cuenca'>Cuenca</option><option value='Albacete'>Albacete</option><option value='Ciudad Real'>Ciudad Real</option>",
-   /*C.León*/ "<option value='León'>León</option><option value='Palencia'>Palencia</option><option value='Valladolid'>Valladolid</option><option value='Salamanca'>Salamanca</option><option value='Zamora'>Zamora</option><option value='Ávila'>Ávila</option><option value='Segovia'>Segovia</option><option value='Burgos'>Burgos</option><option value='Soria'>Soria</option>",
-   /*Cataluña*/ "<option value='Barcelona'>Barcelona</option><option value='Tarragona'>Tarragona</option><option value='Lleida'>Lleida</option><option value='Girona'>Girona</option>",
-   /*Extremadura*/ "<option value='Badajoz'>Badajoz</option><option value='Cáceres'>Cáceres</option>",
-   /*Galicia*/ "<option value='A Coruña'>A Coruña</option><option value='Lugo'>Lugo</option><option value='Pontevedra'>Pontevedra</option><option value='Ourense'>Ourense</option>",
-   /*C.Madrid*/ "<option value='Madrid'>Madrid</option>",
-   /*Región de Murcia*/ "<option value='Murcia'>Murcia</option>",
-   /*Navarra*/ "<option value='Navarra'>Navarra</option>",
-   /*La Rioja*/ "<option value='La Rioja'>La Rioja</option>",
-   /*C.Valenciana*/ "<option value='Alicante'>Alicante</option><option value='Valencia'>Valencia</option><option value='Castellón'>Castellón</option>",
-    /*Ceuta*/"<option value='Ceuta'>Ceuta</option>",
-   /*Melilla*/ "<option value='Melilla'>Melilla</option>",
-       
-];
-});
+
 
 
 
 $("#boton").on("click",function(){
    
-    
+    var nombre = $("#nombre").val();
     var tipo = $("#tipo").val();
     var edad = $("#edad").val();
     var raza = $("#raza").val();
     var ciudad = $("#comunidad").val();
     var provincia = $("#provincia").val();
     var detalles = $("#texto").val();
-    var sexo = $("sexo").val();
-    var image_1 =$("#foto1").val();
+    var sexo = $("#sexo").val();
+    var image_1 = $("#foto1").val();
     var image_2 = $("#foto2").val();
     var image_3 = $("#foto3").val();
     var json={
-        "tipo":tipo,"edad":edad,"raza":raza,"ciudad":ciudad,"provincia":provincia,"detalles":detalles,"image_1":image_1,"image_2":image_2,"image_3":image_3
+        "tipo":tipo,"edad":edad,"raza":raza,"ciudad":ciudad,"nombre":nombre,"sexo":sexo,"provincia":provincia,"detalles":detalles,"image_1":image_1,"image_2":image_2,"image_3":image_3
     }
 
     /*Cambiar "Ciudad" por "Comunidad"*/
@@ -198,8 +272,8 @@ $.ajax({
                         $("#respuesta").html(codigo)
                         console.log('4')
                     }
-                    if (typeof response.message.ciudad !== 'undefined') {
-                        var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.ciudad + "</div>";
+                    if (typeof response.message.comunidad !== 'undefined') {
+                        var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.comunidad + "</div>";
                         $("#respuesta").html(codigo)
                         console.log('5')
                     }
@@ -233,9 +307,8 @@ $.ajax({
         })
     })
     $(document).ready(function(){
-     console.log("holaestoyaqui");
      var prueba = localStorage.getItem("token");
-     console.log(prueba);
     }) 
+    
 </script>
 </html>
