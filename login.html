@@ -80,12 +80,18 @@
             alert("El campo  es obligatorio")
         }else if( typeof apellidos === "undefined" ){
             alert("El campo es obligatorio")
-        }else if(!tlf.lenght == 9){
+        }else if( typeof password === "undefined" ){
+            alert("El campo es obligatorio")
+        }else if( typeof email === "undefined" ){
+            alert("El campo es obligatorio")
+        }else if( typeof tlf === "undefined" ){
+            alert("El campo es obligatorio")
+        }else if(!tlf.lenght == 9){ /*Validar que si el tamaño del num es inferior a 9 digitos o superior meta alert*/
             alert("El teléfono debe tener  9 digitos")
         }else if(!email.includes(["hotmail.com"||"hotmail.es"||"gmail.com"||"gmail.es"||"yahoo.es"||"yahoo.com"||"outlook.com"||"outlook.es"||"protonmail.com"||"protonmail.es"||"@"])){
-            alert("Introduce un correo válido")
+            alert("Introduce un correo válido")/*Incluye finalizaciones de correo básicas*/
         }else if (user.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])|| nombre.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||apellidos.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||password.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||email.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||tlf.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])){
-            alert("Eso no se hace")
+            alert("Eso no se hace")/*Validación implementada para evitar actividad maliciosa en la página*/
         }else if(password.lenght < 4){
             alert("Introduzca una contraseña mas larga")
         }
