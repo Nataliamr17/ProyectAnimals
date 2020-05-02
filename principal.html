@@ -20,8 +20,8 @@
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                  <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav justify-content-between">
                       <li class="nav-item active">
                         <a class="nav-link" href="#">INICIO<span class="sr-only">(current)</span></a>
                       </li>
@@ -43,7 +43,7 @@
           <div class="col-xl-2 col-md-2 col-xs-1">
               <div class="bg-secondary text-white">
                   <ul ><br>
-                    <div class="caja">ANIMAL</div>
+                    <div class="caja" id="testi">ANIMAL</div>
                     <li><input name="animal" type="radio" value="perro">  Perro</li>
                     <li><input name="animal" type="radio" value="gato">  Gato</li>
                     <li><input name="animal" type="radio" value="pajaro">  Pájaro</li>
@@ -164,19 +164,22 @@
           console.log(response)
           for(var i =0;i<response.length;i++){
             console.log(response[i]);
-            var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src='img/Rolo.jpeg' class='card-img-top'><div class='card-body'><h5 class='card-title'>Rolo</h5><p class='card-text'>Ejemplo</p><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModalLong'>Ficha</button></div></div>";
+            var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src='img/Rolo.jpeg' class='card-img-top'><div class='card-body'><h5 class='card-title'>"+ response[i].nombre +
+            "</h5><p class='card-text'>"+ response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='"+ response[i].id +
+            "'>Ficha</button></div></div></div>";
             $("#prueba").append(card)
           }
 
           }
       })
+     
   
     })
-
+    $("#botonficha").on("click", function(){
+        var id= $(this).data("id")
+        console.log(id)
+        console.log("HOLA")
+      })
 </script>
 </html>
-
-
-
-
-<!--  var card = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response[i].tipo +' '+ response[i].ciudad + "</div>" -->
