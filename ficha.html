@@ -212,32 +212,35 @@ $("#boton").on("click",function(){
     var provincia = $("#provincia").val();
     var detalles = $("#texto").val();
     var sexo = $("#sexo").val();
-    var image_1 = $("#foto1").val();
-    var image_2 = $("#foto2").val();
-    var image_3 = $("#foto3").val();
-    var json={
-        "tipo":tipo,"edad":edad,"raza":raza,"ciudad":ciudad,"nombre":nombre,"sexo":sexo,"provincia":provincia,"detalles":detalles,"image_1":image_1,"image_2":image_2,"image_3":image_3
-    }
+   
+   
 
     /*Cambiar "Ciudad" por "Comunidad"*/
-
-/*jQuery(function($){
-    var fotos = ["#foto1","foto2","foto3"]
-    $('#fotos').validate({
-        rules:{},
-        messages:{},
-        submitHandler: function(){
-            return false
+    if(typeof nombre === "undefined"){
+            alert("El campo es obligatorio, inserte un nombre.")/*Estos son para validar que no estan vacios*/
+        }else if ( typeof tipo === "undefined" ){
+            alert("El campo  es obligatorio.")
+        }else if( typeof edad === "undefined" ){
+            alert("El campo de edad es obligatorio, introduzca su edad.")
+        }else if( typeof raza === "undefined" ){
+            alert("El campo es obligatorio, introduzca la raza del animal correspondiente.")
+        }else if( typeof ciudad === "undefined" ){
+            alert("El campo es obligatorio, selecciones su comunidad autónoma")
+        }else if( typeof provincia === "undefined" ){
+            alert("El campo es obligatorio, seleccione la provincia")
+        }else if( typeof detalles === "undefined" ){
+            alert("El campo es obligatorio, introduzca detalles acerca de su animal")
+            else if( typeof sexo === "undefined" ){
+            alert("El campo es obligatorio, seleccione el sexo de su animal")
         }
-
-    })
-
-});*/
-/*$('#fotos').rules('add',{
-    accept: "image/jpeg"|"image/jpg"|"image/png"
-})*/
-
-$.ajax({
+        }else if(detalles.lenght > 255){ /*Validar que si el tamaño del num es inferior a 9 digitos o superior meta alert*/
+            alert("Los detalles pueden tener un máximo de 255 caracteres")
+        }else if (tipo.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])|| edad.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||raza.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||ciudad.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||nombre.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||provincia.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||detalles.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||sexo.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])){
+            alert("Eso no se hace")/*Validación implementada para evitar actividad maliciosa en la página*/
+        }else{ var json={
+        "tipo":tipo,"edad":edad,"raza":raza,"ciudad":ciudad,"nombre":nombre,"sexo":sexo,"provincia":provincia,"detalles":detalles,"image_1":image_1,"image_2":image_2,"image_3":image_3
+    }
+    $.ajax({
             type:"POST",
             url:"http://127.0.0.1:8000/adp",
             dataType: 'json',
@@ -305,6 +308,10 @@ $.ajax({
                 }
             }
         })
+
+        }
+
+
     })
     $(document).ready(function(){
      var prueba = localStorage.getItem("token");
