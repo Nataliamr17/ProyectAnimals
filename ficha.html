@@ -19,10 +19,11 @@
 
 </head>
 <body>
+    
     <header class="formulariocentrado">
+        <h2 class="text-center"> <-- Rellena los datos de tu animal aquí --></h2>
     <div class="contenedor-form">
         <div class="t">
-            
         </div>
 
         <div class="formulario">
@@ -116,9 +117,7 @@
 </body>
 <script>
 
-
 $(document).ready(function() {
-
 
 /*CAMBIAR FUNCION PARA PODER COGER LAS PROVINCIAS CON ALGO QUE NO SEA EL VALUE*/
 $("#comunidad").change(function() {
@@ -232,8 +231,7 @@ $("#boton").on("click",function(){
     var provincia = $("#provincia").val();
     var detalles = $("#texto").val();
     var sexo = $("#sexo").val();
-   
-   
+      
 
     /*Cambiar "Ciudad" por "Comunidad"*/
     if(typeof nombre === "undefined"){
@@ -328,10 +326,7 @@ $("#boton").on("click",function(){
                 }
             }
         })
-
         }
-
-
     })
     $("#subirimg").on("click", function(){
         $("#img1").val();

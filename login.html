@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyect Animals</title>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="estilosregistro.css">
@@ -12,47 +11,41 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
 </head>
 <body>
-<header class="principal">
-    <div class="izquierda">
-        <div class="contenedor-form">
-            <div class="toggle">
-                <span>Crear Cuenta</span>
-            </div>
-
-            <div class="formulario">
-                <h2>Iniciar Sesión</h2>
-               
-                    <input type="email" placeholder="Email" id="Correo2">
-                    <input type="password" placeholder="Contraseña" id="Contraseña2">
-                    <div id="loginerrors"></div>
-                    <input type="submit" id="boton2" class="btn btn-primary" value="Iniciar Sesión">
-                
-            </div>
-
-
-            <div class="formulario">
-                <h2>Crea tu Cuenta</h2>
-
-                <input type="text" placeholder="Usuario" name="usuario" id="usuario" required>
-                <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
-                <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required>
-                <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
-                <input type="email" placeholder="Correo Electronico" name="email" id="email" required>
-                <input type="number" placeholder="Teléfono" name="tlf" id="tlf" required>
-                <div id="respuesta"></div>
-                <input type="submit" id="boton" class="btn btn-primary" value="Registrarse" onsubmit="return ValidateLoginForm()">
-
-            </div>
-            <div id="forgotpass"></div>
-            <div class="reset-pass">
-                <a id="idforgot"><h4>He olvidado mi contraseña</h4></a>
-            </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-4 mt-5 my-xl-5 text-center">
+            <div class="contenedor-form">
+                <div class="toggle">
+                    <span>Crear Cuenta</span>
+                </div>
+                <div class="formulario">
+                    <h2>Iniciar Sesión</h2>
+                        <input type="email" placeholder="Email" id="Correo2">
+                        <input type="password" placeholder="Contraseña" id="Contraseña2">
+                        <div id="loginerrors"></div>
+                        <input type="submit" id="boton2" class="btn btn-primary" value="Iniciar Sesión">
+                </div>
+    
+                <div class="formulario">
+                    <h2>Crea tu Cuenta</h2>
+                    <input type="text" placeholder="Usuario" name="usuario" id="usuario" required>
+                    <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+                    <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required>
+                    <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
+                    <input type="email" placeholder="Correo Electronico" name="email" id="email" required>
+                    <input type="number" placeholder="Teléfono" name="tlf" id="tlf" required>
+                    <div id="respuesta"></div>
+                    <input type="submit" id="boton" class="btn btn-primary" value="Registrarse" onsubmit="return ValidateLoginForm()">
+                </div>
+                <div id="forgotpass"></div>
+                <div class="reset-pass">
+                    <a id="idforgot"><h4>He olvidado mi contraseña</h4></a>
+                </div>
+            </div>   
         </div>
-    </div>
-    <div class="derecha">
-        <img class="logo" src="img/logo.png">
-    </div>
-</header>
+        <div class="col-4 my-xl-5">
+        <img class="logo" src="img/logo.png" >
+        </div>
+     </div>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/login.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -64,9 +57,6 @@
 </body>
 <script>
 
-
-    
-   
     $("#boton").on("click", function () {
         var user = $("#usuario").val();
         var nombre = $("#nombre").val();
@@ -103,7 +93,6 @@
             "password": password,
             "email": email,
             "telefono": tlf
-            
         };
 
         $.ajax({
@@ -112,8 +101,7 @@
             dataType: 'json',
             data: {
                 json: JSON.stringify(json)
-               
-            },
+              },
             success: function (response) {
                 if (response.code === 200) {
                     var codigo = "<div class='alert alert-success' role='alert'> " + response.message + "  </div>";
@@ -129,7 +117,6 @@
                     if (typeof response.errors.nombre !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.nombre + "</div>";
                         $("#respuesta").html(codigo)
-                       
                         console.log('3')
                     }
                     if (typeof response.errors.apellidos !== 'undefined') {
@@ -155,11 +142,7 @@
                 }
             }
         })
-
-        }
-
-
-        
+        } 
     })
     $("#boton2").on("click", function (){
         var password = $("#Contraseña2").val();
@@ -173,7 +156,6 @@
             dataType: 'json',
             data: {
                 json: JSON.stringify(loggear)
-               
             },
             success:function(response){
                 console.log(response)
@@ -190,7 +172,6 @@
                     }
                 } 
                 else{
-                    
                     console.log(response)
                     localStorage.setItem("token", response);
                     document.location.href="rol.html";
