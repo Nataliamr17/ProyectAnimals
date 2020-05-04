@@ -59,9 +59,12 @@ h4{
 .contenedor-form input[type="password"],
 .contenedor-form input[type="email"],
 .contenedor-form input[type="number"],
-.contenedor-form input[type="file"]{
+.contenedor-form input[type="file"]
+
+{
     outline: none;
     background: rgba(0,0,0,.5);
+   
     display: block;
     width: 100%;
     padding: 10px 15px;
@@ -75,7 +78,20 @@ h4{
     margin: 0 0 20px 0;
     transition: all .2s ease;
 }
+select{
 
+    border-radius: 2px;
+    border-bottom: 4px solid #ff851b;
+    transition: all .2s ease;
+    padding: 10px 15px;
+    margin: auto;
+    background: rgba(0,0,0,.5);
+    width: 100%;
+    color: white;    
+}
+select:focus{
+    border-bottom: 4px solid #33b5ff;
+}
 .contenedor-form input[type="text"]:focus,
 .contenedor-form input[type="password"]:focus,
 .contenedor-form input[type="email"]:focus {
@@ -83,14 +99,14 @@ h4{
 }
 .contenedor-form input[type="number"]
 
-.contenedor-form input[type="submit"]{
+/*.contenedor-form input[type="submit"]{
     background: #ff851b;
     color: white;
     border: none;
     width: 100%;
     padding: 10px 0;
     font-weight: normal;
-    /*font-family: Roboto;*/
+   
     letter-spacing: 1px;
     font-size: 16px;
     cursor: pointer;
@@ -100,7 +116,7 @@ h4{
 
 .contenedor-form input[type="submit"]:hover{
     background: rgba(0,117,217,0.7);
-}
+}*/
 
 .contenedor-form .reset-pass{
     background: #33b5ff;
