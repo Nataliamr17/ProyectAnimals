@@ -256,9 +256,9 @@ $("#boton").on("click",function(){
         }else if (tipo.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])|| edad.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||raza.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||ciudad.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||nombre.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||provincia.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||detalles.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])||sexo.includes([".jpg"||".png"||".jpeg"||".py"||".exe"])){
             alert("Eso no se hace")/*Validación implementada para evitar actividad maliciosa en la página*/
         }else{ var json={
-        "tipo":tipo,"edad":edad,"raza":raza,"ciudad":ciudad,"nombre":nombre,"sexo":sexo,"provincia":provincia,"detalles":detalles,"image_1":image_1,"image_2":image_2,"image_3":image_3
-    }
-    $.ajax({
+        "tipo":tipo,"edad":edad,"raza":raza,"ciudad":ciudad,"nombre":nombre,"sexo":sexo,"provincia":provincia,"detalles":detalles
+        }
+        $.ajax({
             type:"POST",
             url:"http://127.0.0.1:8000/adp",
             dataType: 'json',
@@ -270,7 +270,7 @@ $("#boton").on("click",function(){
             }, 
             success: function (response) {
                 if (response.code === 200) {
-                    var codigo = "<div class='alert alert-success' role='alert'> " + response.message + "Ten en cuenta que si añades fotos tendrás más opciones de que tu animal sea adoptado. Haz click <a href='' data-toggle='modal' data-target='#exampleModal'>aquí</a> para subir hasta 3 imágenes, o haz click <a href='principal.html'>aquí</a> para ir a la página principal </div>";
+                    var codigo = "<div class='alert alert-success' role='alert'> " + response.message + "Ten en cuenta que si añades fotos tendrás más opciones de que tu animal sea adoptado. Haz click <a href='' data-toggle='modal' data-target='#exampleModal' data-id='"+response.adp.id+"'>aquí</a> para subir hasta 3 imágenes, o haz click <a href='principal.html'>aquí</a> para ir a la página principal </div>";
                     $("#respuesta").html(codigo)
                     console.log("Esto pasa por aqui")
                 }
@@ -327,13 +327,12 @@ $("#boton").on("click",function(){
             }
         })
         }
+        
     })
     $("#subirimg").on("click", function(){
-        $("#img1").val();
-        $("#img2").val();
-        $("#img3").val();
+        var formData= new formData();
     $.ajax({
-        url:'',
+        url:'http://127.0.0.1:8000/adp/new/img/s',
         type: 'POST',
         success: function(response){
             if(response.code===200){

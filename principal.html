@@ -102,7 +102,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="titulo"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -112,13 +112,13 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active mh-80">
-              <img src="img/Rolo.jpeg" class="d-block w-100" alt="...">
+              <img src="" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item mh-80">
-              <img src="img/Rolo2.jpeg" class="d-block w-100" alt="...">
+              <img src="" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item mh-80">
-              <img src="img/Rolo3.jpeg" class="d-block w-100" alt="...">
+              <img src="" class="d-block w-100" alt="...">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -131,13 +131,14 @@
           </a>
         </div>
         <div class="col-md-12">
-          <ul><br>
-          <li>Tipo: Perro</li>
-          <li>Edad: 2 años</li>
-          <li>Sexo: Macho</li>
-          <li>Raza: Labrador</li>
-          <li>CC AA: Extremadura</li>
-          <li>Provincia: Badajoz</li>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info" id="tipo"></li>
+            <li class="list-group-item list-group-item-info" id="raza"></li>
+            <li class="list-group-item list-group-item-info" id="edad"></li>
+            <li class="list-group-item list-group-item-info" id="sexo"></li>
+            <li class="list-group-item list-group-item-info" id="ccaa"></li>
+            <li class="list-group-item list-group-item-info" id="provincia"></li>
+       
          </ul>
         </div>
       </div>
@@ -155,6 +156,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 <script>
+
    $(document).ready(function(){
     console.log("holaestoyaqui");
          $.ajax({
@@ -173,13 +175,34 @@
 
           }
       })
-     
-  
     })
-    $("#botonficha").on("click", function(){
+    $(document).on("click","#botonficha" ,function(){
         var id= $(this).data("id")
-        console.log(id)
-        console.log("HOLA")
+        console.log(id);
+        $.ajax({
+          type: 'GET',
+          url: 'http://127.0.0.1:8000/adp/'+ id,
+          success:function(response){
+            if(response.adopcion.id === localStorage.getItem)
+
+
+            $('#titulo').empty();
+            $('#titulo').append(response.adopcion.nombre)
+            $('#tipo').empty();
+            $('#tipo').append('Tipo:  '+ response.adopcion.tipo)
+            $('#raza').empty();
+            $('#raza').append('Raza:  '+ response.adopcion.raza)
+            $('#edad').empty();
+            $('#edad').append('Edad:  '+ response.adopcion.edad)
+            $('#sexo').empty();
+            $('#sexo').append('Sexo:  '+ response.adopcion.sexo)
+            $('#ccaa').empty();
+            $('#ccaa').append('CCAA:  '+ response.adopcion.cuidad)
+            $('#provincia').empty();
+            $('#provincia').append('Provincia:  '+ response.adopcion.provincia)
+          }
+        })
+        
       })
 </script>
 </html>
