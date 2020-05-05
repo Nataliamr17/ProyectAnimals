@@ -59,3 +59,9 @@ h1{
     background-color:white;
     color: black;
 }
+
+.caja{
+    background-color: wheat;
+    margin: auto;
+    padding: auto;
+}
