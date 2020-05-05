@@ -77,11 +77,11 @@
                
                <div id="respuesta"></div>
              <center><input type="submit" class="btn btn-primary" value="Crear Ficha" id="boton"></center>
-            
-            
-        </div>
+       </div>
     </div>
+   <a href="rol.html"><button type="button" class="btn btn-danger">Volver</button></a>
 </header>
+
  
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -248,7 +248,6 @@ $("#boton").on("click",function(){
             alert("El campo es obligatorio, seleccione la provincia")
         }else if( typeof detalles === "undefined" ){
             alert("El campo es obligatorio, introduzca detalles acerca de su animal")
-            
         }else if( typeof sexo === "undefined" ){
             alert("El campo es obligatorio, seleccione el sexo de su animal")
         }else if(detalles.lenght > 255){ /*Validar que si el tamaño del num es inferior a 9 digitos o superior meta alert*/
