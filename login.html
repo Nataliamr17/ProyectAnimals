@@ -172,8 +172,12 @@
                     }
                 } 
                 else{
-                    console.log(response)
-                    localStorage.setItem("token", response);
+                    var token= response.token
+                    localStorage.setItem("token", token);
+                    var id= response.user.id
+                    localStorage.setItem("userid", id)
+                    var username = response.user.user
+                    localStorage.setItem("username", username)
                     document.location.href="rol.html";
                 }
             }
