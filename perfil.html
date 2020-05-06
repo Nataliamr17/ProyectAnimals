@@ -32,6 +32,11 @@
                           <a class="nav-link" href="mensajes.html">MENSAJES<span class="sr-only">(current)</span></a>
                         </li>
                       </ul>
+                      <span class="navbar-text">
+                        <div id="datosusu"> 
+                        </div>
+                        
+                      </span>
                     </div>
                   </nav>
             </div>
@@ -90,6 +95,16 @@
 <script>
 
 $(document).ready(function(){
+  if(localStorage.getItem("username") !== "undefined"){
+      $("#datosusu").html("Bienvenido: "+localStorage.getItem("username")+' ! <i class="fas fa-sign-out-alt" id="logout"></i>')
+    }
+      $(document).on("click","#logout",function(){
+        localStorage.removeItem("token")
+        localStorage.removeItem("userid")
+        localStorage.removeItem("username")
+        alert("Sesión cerrada.")/* to do: Cambiar redirect por entradas dinamicas de li en funcion de si esta logged o no*/
+        document.location.href="index.html";
+      })
   console.log(localStorage.getItem("userid"))
     $.ajax({
           type: 'GET',
@@ -139,5 +154,7 @@ $("#formimg").on("submit", function(e){
         }
     })
   })
+
+  
 </script>
 </html>
