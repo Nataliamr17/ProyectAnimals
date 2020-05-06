@@ -90,9 +90,10 @@
 <script>
 
 $(document).ready(function(){
+  console.log(localStorage.getItem("userid"))
     $.ajax({
           type: 'GET',
-          url: 'http://127.0.0.1:8000/users/'+localStorage.getItem("id"),
+          url: 'http://127.0.0.1:8000/users/'+localStorage.getItem("userid"),
           success:function(response){
             console.log(response);
             $("#idusuario").val(response.user.id);
