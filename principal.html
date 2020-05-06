@@ -53,7 +53,7 @@
             <input name="animal" type="checkbox" value="iguana" id="iguana"> Iguana <br>
             <input name="animal" type="checkbox" value="otro" id="otro"> Otro <br>
           </ul>
-          <ul id="sexo">
+          <ul id="sexobusc">
             <div class="caja">SEXO</div>
             <input name="sexo" type="checkbox" value="macho" id="macho"> Macho <br>
             <input name="sexo" type="checkbox" value="hembra" id="hembra"> Hembra <br>
@@ -279,7 +279,7 @@
         }
       })
     })
-  $('#sexo').on("change", function(){
+  $('#sexobusc').on("change", function(){
     var macho= false;
     var hembra = false;
     if($('#macho').is(':checked')){
