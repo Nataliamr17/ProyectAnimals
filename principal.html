@@ -137,7 +137,7 @@
               <li class="list-group-item list-group-item-info" id="raza"></li>
               <li class="list-group-item list-group-item-info" id="edad"></li>
               <li class="list-group-item list-group-item-info" id="sexo"></li>
-              <li class="list-group-item list-group-item-info" id="ccaa"></li>
+              <li class="list-group-item list-group-item-info" id="c_a"></li>
               <li class="list-group-item list-group-item-info" id="provincia"></li>
 
             </ul>
@@ -363,8 +363,8 @@
         $('#edad').append('Edad:  ' + response.adopcion.edad)
         $('#sexo').empty();
         $('#sexo').append('Sexo:  ' + response.adopcion.sexo)
-        $('#ccaa').empty();
-        $('#ccaa').append('CCAA:  ' + response.adopcion.cuidad)
+        $('#c_a').empty();
+        $('#c_a').append('CCAA:  ' + response.adopcion.cuidad)
         $('#provincia').empty();
         $('#provincia').append('Provincia:  ' + response.adopcion.provincia)
         $('#sms').removeAttr("user-id");
