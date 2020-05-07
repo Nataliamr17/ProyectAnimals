@@ -217,7 +217,7 @@
         console.log(response)
         for (var i = 0; i < response.length; i++) {
           console.log(response[i]);
-          var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+          var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
             "</h5><p class='card-text'>" + response[i].detalles +
             "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
             "'>Ficha</button></div></div></div>";
