@@ -26,20 +26,19 @@
           </button>
           <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarNav">
             <ul class="navbar-nav ">
-              <li class="nav-item active">
-                <a class="nav-link" href="principal.html">INICIO</a>
+              <li class="nav-item active mr-3">
+                <a class="nav-link" href="principal.html"><h4>INICIO</h4></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="ficha.html">CREAR FICHA</a>
+              <li class="nav-item mr-3">
+                <a class="nav-link" href="ficha.html"><h4>CREAR FICHA</h4></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="perfil.html">TU PERFIL<span class="sr-only">(current)</span></a>
+              <li class="nav-item mr-3">
+                <a class="nav-link" href="perfil.html"><h4>TU PERFIL</h4></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="mensajes.html">MENSAJES<span class="sr-only">(current)</span></a>
+              <li class="nav-item mr-3">
+                <a class="nav-link" href="mensajes.html"><h4>MENSAJES</h4></a>
               </li>
-              <li class="nav-item">
-              </li>
+              
             </ul>
             <span class="navbar-text">
               <div id="datosusu"> 
@@ -54,7 +53,7 @@
       <div class="col-xl-2 col-md-2 col-xs-1">
         <div class="bg-secondary text-white">
           <ul id="animal"><br>
-            <div class="caja" id="testi">ANIMAL</div>
+            <div class="caja" id="testi"><h5>ANIMAL</h5></div>
             <input name="animal" type="checkbox" value="perro" id="perro"> Perro <br>
             <input name="animal" type="checkbox" value="gato" id="gato"> Gato <br>
             <input name="animal" type="checkbox" value="pajaro" id="pajaro"> Pájaro <br> 
@@ -62,12 +61,12 @@
             <input name="animal" type="checkbox" value="otro" id="otro"> Otro <br>
           </ul>
           <ul id="sexobusc">
-            <div class="caja">SEXO</div>
+            <div class="caja"><h5>SEXO</h5></div>
             <input name="sexo" type="checkbox" value="macho" id="macho"> Macho <br>
             <input name="sexo" type="checkbox" value="hembra" id="hembra"> Hembra <br>
           </ul>
           <ul id="ccaa">
-            <div class="caja">COMUNIDAD AUTONOMA</div>
+            <div class="caja"><h5>COMUNIDAD AUTONOMA</h5></div>
             <input name="ccaa" type="checkbox" value="andalucia"> Andalucía <br>
             <input name="ccaa" type="checkbox" value="aragon"> Aragón <br> 
             <input name="ccaa" type="checkbox" value="cantabria"> Cantabria <br> 
@@ -217,7 +216,7 @@
         console.log(response)
         for (var i = 0; i < response.length; i++) {
           console.log(response[i]);
-          var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+          var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
             "</h5><p class='card-text'>" + response[i].detalles +
             "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
             "'>Ficha</button></div></div></div>";
