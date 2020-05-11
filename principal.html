@@ -66,7 +66,7 @@
             <input name="sexo" type="checkbox" value="hembra" id="hembra"> Hembra <br>
           </ul>
           <ul id="ccaa">
-            <div class="caja"><h5>COMUNIDAD AUTONOMA</h5></div>
+            <div class="caja" id="comunidad"><h5>COMUNIDAD AUTONOMA</h5></div>
             <input name="ccaa" type="checkbox" value="andalucia"> Andalucía <br>
             <input name="ccaa" type="checkbox" value="aragon"> Aragón <br> 
             <input name="ccaa" type="checkbox" value="cantabria"> Cantabria <br> 
@@ -143,6 +143,7 @@
           </div>
         </div>
         <div class="modal-footer">
+          <div id="editar"></div>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
             data-whatever="@mdo" id="sms">¡Me interesa!</button>
@@ -208,7 +209,7 @@
         alert("Sesión cerrada.")/* to do: Cambiar redirect por entradas dinamicas de li en funcion de si esta logged o no*/
         document.location.href="index.html";
       })
-    console.log("holaestoyaqui");
+    
     $.ajax({
       type: 'GET',
       url: 'http://127.0.0.1:8000/adp',
@@ -337,11 +338,18 @@
       }
     })
   })
+  // $('#comunidad').on("change", function(){ 
+  //   var comu={
+  //     comunidad: "comunidad",
+  //     data:{
+  //       json: JSON.stringify(comunidad)
+  //     }
+  //   }
+  // })
   })
   $(document).on("click", "#botonficha", function () {
     var id = $(this).data("id")
-    console.log(id);
-    $.ajax({
+      $.ajax({
       type: 'GET',
       url: 'http://127.0.0.1:8000/adp/' + id,
       success: function (response) {
@@ -352,6 +360,11 @@
         $('#foto2').append("<img src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_2 + "'></img>")
         $('#foto3').append("<img src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_3 + "'></img>")
 
+        if(response.adopcion.usuarios_id === localStorage.getItem("username")){
+         var editar = "<button type='button' class='btn btn-warning'>Editar</button>"
+         $('#editar').empty();
+         $('#editar').append(editar);
+        }
         $('#titulo').empty();
         $('#titulo').append(response.adopcion.nombre)
         $('#tipo').empty();
@@ -403,7 +416,6 @@
           }
         }
       })
-
     })
   })
 </script>
