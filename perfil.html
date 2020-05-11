@@ -58,7 +58,7 @@
                   <p id="Apellidos">Apellidos: </p>
                   <p id="Correo">Correo Electrónico: </p>
                   <p id="Tlf">Teléfono: </p>
-                  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">Editar</button>
+                  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter" id="botonedit">Editar</button>
                   <button type="button" id="idusuario" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Subir imagen
                   </button><br><br>
             </div>
@@ -96,11 +96,20 @@
                 </button>
               </div>
               <div class="modal-body">
+                <div class="formulario">
+                  <h2>Edita tus datos</h2>
+                  
+                  <input type="text" placeholder="Nombre" name="nombre" id="nombremodal" required>
+                  <input type="text" placeholder="Apellidos" name="apellidos" id="apellidosmodal" required>
+                  <input type="email" placeholder="Correo Electronico" name="email" id="emailmodal" required>
+                  <input type="number" placeholder="Teléfono" name="tlf" id="tlfmodal" required>
+                  <div id="respuesta"></div>
                 
+              </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                <button type="button" id="cambioperfil" class="btn btn-primary">Guardar cambios</button>
               </div>
             </div>
           </div>
@@ -125,12 +134,12 @@ $(document).ready(function(){
         alert("Sesión cerrada.")/* to do: Cambiar redirect por entradas dinamicas de li en funcion de si esta logged o no*/
         document.location.href="index.html";
       })
-  console.log(localStorage.getItem("userid"))
+  
     $.ajax({
           type: 'GET',
           url: 'http://127.0.0.1:8000/users/'+localStorage.getItem("userid"),
           success:function(response){
-            console.log(response);
+           
             $("#idusuario").val(response.user.id);
             $("#user").append(response.user.user);
             $("#Nombre").append(response.user.nombre);
@@ -139,7 +148,7 @@ $(document).ready(function(){
             $("#Tlf").append(response.user.telefono);
             $("#foto").append("<img  class='img-fluid' src='http://127.0.0.1:8000/users/getimage/"+ response.user.image+"'></img>");
            /* $('#foto1').empty();
-            $('#foto1').append("<img src='http://127.0.0.1:8000/users/img/"+ response.user.foto+"'></img>")*/
+            $('#foto1').append("<img src='http://127.0.0.1:8000/users/img/"+ response.user.foto+"'><img>")*/
 
           }
         })
@@ -174,7 +183,48 @@ $("#formimg").on("submit", function(e){
         }
     })
   })
-
+/*FUNCION COGER DATOS PERFIL*/
+$("#botonedit").on("click", function(){
   
+  $.ajax({
+    type: 'GET',
+    url:'http://127.0.0.1:8000/users/'+localStorage.getItem("userid"),
+    success:function(response){
+     
+      $("#usuariomodal").val(response.user.user)
+      $("#nombremodal").val(response.user.nombre)
+      $("#apellidosmodal").val(response.user.apellidos)
+      $("#emailmodal").val(response.user.email)
+      $("#tlfmodal").val(response.user.telefono)
+    }
+    
+    })
+})
+  /*FUNCION CAMBIAR PERFIL*/
+  $("#cambioperfil").on("click",function(){
+    var nom1 =  $("#nombremodal").val()
+    var ape1 = $("#apellidosmodal").val()
+    var email =  $("#emailmodal").val()
+    var tele1 =  $("#tlfmodal").val()
+    var json = {
+      "nombre":nom1,"apellidos":ape1,"email":email,"telefono":tele1
+    }
+    $.ajax({
+    type: 'PUT',
+    data: {
+      "json":JSON.stringify(json)
+    },
+    url:'http://127.0.0.1:8000/users',
+    headers:{
+            Authorization:localStorage.getItem("token")
+        },
+    success:function(response){
+      alert("Los datos han sido modificados de forma satisfactoria, se redireccionará a su perfil.")
+      document.location.href = "perfil.html";
+     
+    }
+    
+    })
+  })
 </script>
 </html>

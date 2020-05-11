@@ -44,7 +44,7 @@
         </div>
     </div> <br><br>
     <div class="row justify-content-center">
-      <div class="col-5 text-light text-center">
+      <div class="col-5 text-light">
         <h3>-- BANDEJA DE ENTRADA --</h3>
 
       </div>
@@ -53,7 +53,7 @@
       <div class="col-2">
         <div class="btn-group-vertical">
         <a href="mensajes.html"><button type="button" class="btn btn-info btn-lg rounded-pill">Bandeja entrada</button></a> <br> <br>
-          <button type="button" class="btn btn-outline-info btn-lg rounded-pill">Crear mensaje</button> <br> <br>
+          <button type="button" id="creamsj" class="btn btn-outline-info btn-lg rounded-pill">Crear mensaje</button> <br> <br>
           <button type="button" class="btn btn-outline-info btn-lg rounded-pill">Borrar mensaje</button> <br> <br>
         </div>
         
@@ -67,6 +67,60 @@
         </ul>
       </div>
     </div>
+    <!-- Modal VER MENSAJE -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ejemplomodal">Mensaje</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="bodymodal">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+            <button type="button" class="btn btn-primary" id="enviarmensaje" data-toggle="modal" data-target="#mensajerespuesta">Responder</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal ENVIAR MENSAJE -->
+    <div class="modal fade" id="mensajerespuesta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Nuevo Mensaje</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Destinatario:</label>
+                  <input type="text" class="form-control" id="destinatario">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Titulo:</label>
+                  <input type="text" class="form-control" id="titulomsj">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Mensaje:</label>
+                  <textarea class="form-control" id="texto"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="respuestamsj">Enviar mensaje</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <script src="js/jquery-3.1.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -83,26 +137,81 @@
         alert("Sesión cerrada.")/* to do: Cambiar redirect por entradas dinamicas de li en funcion de si esta logged o no*/
         document.location.href="index.html";
       })
-    })
+    
 
-  $(document).ready(function(){
+ 
     $.ajax({
       url: 'http://127.0.0.1:8000/msj/user',
       type: 'GET',
       headers:{
-        Authorization: localStorage.getItem('token')
+        Authorization: localStorage.getItem("token")
       },
       success: function(response){
         console.log(response)
         for (var i = 0; i < response.msj.length; i++){
           console.log(response.msj[i].titulo)
-          var html= "<li class='list-group-item'>"+ response.msj[i].titulo+"</li>"
+          var html= '<li class="list-group-item" > <button type="button" id="botonmensaje" data-id="'+response.msj[i].id+'"data-user="'+response.msj[i].from_users_id+'" class="btn btn-primary mr-5" data-toggle="modal" data-target="#exampleModal">Ver Mensaje</button>'+ response.msj[i].titulo+'</li>'
           $('#bandeja').append(html)
         }
       }
     })
+    $(document).on("click","#botonmensaje",function(){
+      var usuario= $(this).data("user")
+      $('#destinatario').val(usuario)
+      var id = $(this).data("id")
+      $.ajax({
+        url:'http://127.0.0.1:8000/msj/'+id,
+        type: 'GET',
+        headers:{
+        Authorization: localStorage.getItem("token")
+      },
+      success: function(response){
+        console.log(response)
+        $("#ejemplomodal").empty()
+        var titulo = "<p>"+response.msj.titulo+"</p>"
+        $("#ejemplomodal").append(titulo)
+        $("#bodymodal").empty()
+        var body = "<p>"+response.msj.contenido+"</p>"
+        $("#bodymodal").append(body)
+      }
+      })
+    })
   })
+  $(document).on("click","#creamsj", function(){
+    $('#destinatario').val("")
+    $("#mensajerespuesta").modal("show")
+  })
+  
+    $(document).on("click", "#respuestamsj", function () {
+     
+      var destinatario = $('#destinatario').val()
+      var texto = $('#texto').val()
+      var titulo = $('#titulomsj').val()
+      var json = {
+        'to_users_id': destinatario,
+        'titulo': titulo,
+        'contenido': texto,
+      }
+      $.ajax({
+        type: 'POST',
+        url: 'http://127.0.0.1:8000/msj',
+        headers: {
+          Authorization: localStorage.getItem("token")
+        },
+        data: {
+          json: JSON.stringify(json)
+        },
+        success: function (response) {
+          if (response.code === 200) {
+            alert("Mensaje enviado correctamente.")
+            document.location.href = "principal.html";
+          }
+          else {
+            alert(response.message)
+          }
+        }
+      })
 
-
+    })
 </script>
 </html>
