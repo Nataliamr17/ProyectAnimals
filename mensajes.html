@@ -177,7 +177,10 @@
       })
     })
   })
-
+  $(document).on("click","#creamsj", function(){
+    $('#destinatario').val("")
+    $("#mensajerespuesta").modal("show")
+  })
   
     $(document).on("click", "#respuestamsj", function () {
      
