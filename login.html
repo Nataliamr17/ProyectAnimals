@@ -166,7 +166,7 @@
                         var error = "<div class='alert alert-danger' role='alert'> "+ response.message +" </div>"
                         $("#loginerrors").append(error)
                     }
-                }else if(response.status === "error"){
+                }else if(response.status === "Error"){
                     if(typeof response.message !== 'undefined'){
                         var error = "<div class='alert alert-danger' role='alert'> "+ response.message +" </div>"
                         $("#loginerrors").append(error)
@@ -180,6 +180,7 @@
                     var username = response.user.user
                     localStorage.setItem("username", username)
                     document.location.href="rol.html";
+                    
                 }
             }
         }) 
