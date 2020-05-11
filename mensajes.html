@@ -53,7 +53,7 @@
       <div class="col-2">
         <div class="btn-group-vertical">
           <button type="button" class="btn btn-info btn-lg rounded-pill">Bandeja entrada</button> <br> <br>
-          <button type="button" class="btn btn-outline-info btn-lg rounded-pill">Crear mensaje</button> <br> <br>
+          <button type="button" id="creamsj" class="btn btn-outline-info btn-lg rounded-pill">Crear mensaje</button> <br> <br>
           <button type="button" class="btn btn-outline-info btn-lg rounded-pill">Borrar mensaje</button> <br> <br>
         </div>
         
@@ -72,7 +72,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="ejemplomodal">Modal title</h5>
+            <h5 class="modal-title" id="ejemplomodal">Mensaje</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -116,7 +116,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary" id="enviarsms">Enviar mensaje</button>
+              <button type="button" class="btn btn-primary" id="respuestamsj">Enviar mensaje</button>
             </div>
           </div>
         </div>
@@ -150,12 +150,14 @@
         console.log(response)
         for (var i = 0; i < response.msj.length; i++){
           console.log(response.msj[i].titulo)
-          var html= '<li class="list-group-item" > <button type="button" id="botonmensaje" data-id="'+response.msj[i].id+'"  class="btn btn-primary mr-5" data-toggle="modal" data-target="#exampleModal">Ver Mensaje</button>'+ response.msj[i].titulo+'</li>'
+          var html= '<li class="list-group-item" > <button type="button" id="botonmensaje" data-id="'+response.msj[i].id+'"data-user="'+response.msj[i].from_users_id+'" class="btn btn-primary mr-5" data-toggle="modal" data-target="#exampleModal">Ver Mensaje</button>'+ response.msj[i].titulo+'</li>'
           $('#bandeja').append(html)
         }
       }
     })
     $(document).on("click","#botonmensaje",function(){
+      var usuario= $(this).data("user")
+      $('#destinatario').val(usuario)
       var id = $(this).data("id")
       $.ajax({
         url:'http://127.0.0.1:8000/msj/'+id,
@@ -176,6 +178,37 @@
     })
   })
 
+  
+    $(document).on("click", "#respuestamsj", function () {
+     
+      var destinatario = $('#destinatario').val()
+      var texto = $('#texto').val()
+      var titulo = $('#titulomsj').val()
+      var json = {
+        'to_users_id': destinatario,
+        'titulo': titulo,
+        'contenido': texto,
+      }
+      $.ajax({
+        type: 'POST',
+        url: 'http://127.0.0.1:8000/msj',
+        headers: {
+          Authorization: localStorage.getItem("token")
+        },
+        data: {
+          json: JSON.stringify(json)
+        },
+        success: function (response) {
+          if (response.code === 200) {
+            alert("Mensaje enviado correctamente.")
+            document.location.href = "principal.html";
+          }
+          else {
+            alert(response.message)
+          }
+        }
+      })
 
+    })
 </script>
 </html>
