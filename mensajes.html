@@ -54,7 +54,7 @@
         <div class="btn-group-vertical">
         <a href="mensajes.html"><button type="button" class="btn btn-info btn-lg rounded-pill">Bandeja entrada</button></a> <br> <br>
           <button type="button" id="creamsj" class="btn btn-outline-info btn-lg rounded-pill">Crear mensaje</button> <br> <br>
-          <button type="button" class="btn btn-outline-info btn-lg rounded-pill">Borrar mensaje</button> <br> <br>
+          <button type="button" id="borramsj" class="btn btn-outline-info btn-lg rounded-pill">Borrar mensaje</button> <br> <br>
         </div>
         
       </div>
@@ -168,10 +168,10 @@
       success: function(response){
         console.log(response)
         $("#ejemplomodal").empty()
-        var titulo = "<p>"+response.msj.titulo+"</p>"
+        var titulo = "<p>"+"Titulo: "+response.msj.titulo+"</p>"
         $("#ejemplomodal").append(titulo)
         $("#bodymodal").empty()
-        var body = "<p>"+response.msj.contenido+"</p>"
+        var body = "De: "+usuario+"<p><br>"+"Mensaje: "+response.msj.contenido+"</p>"+"<br>Enviado el: "+ response.msj.created_at 
         $("#bodymodal").append(body)
       }
       })
@@ -191,6 +191,7 @@
         'to_users_id': destinatario,
         'titulo': titulo,
         'contenido': texto,
+
       }
       $.ajax({
         type: 'POST',
@@ -212,6 +213,26 @@
         }
       })
 
+    })
+    $document.on("click","#borramsj", function(){
+      /*data-id="'+response.msj[i].user+'"*/
+      
+      $.ajax({
+    type: 'PUT',
+    data: {
+      "json":JSON.stringify(json)
+    },
+    url:'http://127.0.0.1:8000/msj',
+    headers:{
+            Authorization:localStorage.getItem("token")
+        },
+    success:function(response){
+      alert("El mensaje se ha eliminado con exito.")
+      document.location.href = "mensajes.html";
+     
+    }
+    
+    })
     })
 </script>
 </html>
