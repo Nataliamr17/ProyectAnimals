@@ -20,7 +20,7 @@
     <div class="row">
       <div class="col-xl-12">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="principal.html"><img src="img/logo.png" width="100px"></a>
+          <a class="navbar-brand" href="principal.html"><img src="img/logo.png" width="100px" class="ml-5"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -159,6 +159,7 @@
               <li class="list-group-item list-group-item-info" id="sexo"></li>
               <li class="list-group-item list-group-item-info" id="c_a"></li>
               <li class="list-group-item list-group-item-info" id="provincia"></li>
+              <li class="list-group-item list-group-item-info" id="adoptedby"></li>
 
             </ul>
           </div>
@@ -230,6 +231,27 @@
             <button type="submit" class="btn btn-primary" id="subirimg">Subir imágenes</button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="adoptar" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">¡Enhorabuena! Han adoptado a tu animal!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <p>Introduce el nombre del usuario que ha adoptado a tu animal</p>
+          <input type="hidden" id="adpid">
+          <input type="text" id="adoptado">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success" id="saveadp">Guardar</button>
+        </div>
       </div>
     </div>
   </div>
@@ -668,13 +690,14 @@
         $('#foto1').empty();
         $('#foto2').empty();
         $('#foto3').empty();
+        $('#adpid').val(response.adopcion.id)
         $('#foto1').append("<img class='rounded d-block w-100' style='height:400px' src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_1 + "'></img>")
         $('#foto2').append("<img class='rounded d-block w-100' style='height:400px' src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_2 + "'></img>")
         $('#foto3').append("<img class='rounded d-block w-100' style='height:400px' src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_3 + "'></img>")
 
         if (response.adopcion.usuarios_id === localStorage.getItem("username")) {
           var editar = "<button type='button' class='btn btn-warning' id='btnimg' data-id='" + response.adopcion.id + "'>Subir imágenes</button>"
-          var success = "<button type='button' class='btn btn-success'>Adoptado</button>"
+          var success = "<button type='button' class='btn btn-success'id='modaladp'>Adoptado</button>"
           $('#btn-adp').empty();
           $('#btn-adp').append(success);
           $('#editar').empty();
@@ -696,7 +719,12 @@
         $('#provincia').append('Provincia:  ' + response.adopcion.provincia)
         $('#sms').removeAttr("user-id");
         $('#sms').attr("user-id", response.adopcion.usuarios_id)
-
+        $('#adoptedby').empty();
+        if(response.adopcion.adoptedby_id != null){
+          $('#adoptedby').append('Adoptado por:  ' + response.adopcion.adoptedby_id)
+        } else {
+        $('#adoptedby').append('Adoptado por:   Aún no ha sido adoptado!' )
+        }
       }
     })
     $(document).on("click", "#sms", function () {
@@ -777,6 +805,40 @@
       }
     })
   })
+  $(document).on("click", "#modaladp", function(){
+    $("#adoptar").modal("show")
+  })
+  $(document).on("click", "#saveadp", function(){
+    var id=$('#adpid').val()
+    var user= $("#adoptado").val()
+    var json= {
+      "adpid": id,
+      "adp_usr_id": user,
+    }
+    $.ajax({
+      type: 'POST',
+      url: 'http://127.0.0.1:8000/adp/new',
+      data: {
+        json: JSON.stringify(json)
+      },
+      headers: {
+        Authorization: localStorage.getItem('token')
+      },
+      success: function(response){
+        if(response.code === 200){
+        alert(response.message)
+        document.location.href = "principal.html";
+        }
+      else{
+        alert(response.message)
+      }
+     
+    
+      }
+    })
+  })
+
+
 </script>
 
 </html>
