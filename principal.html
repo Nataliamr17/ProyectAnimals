@@ -125,27 +125,33 @@
         </div>
         <div class="modal-body">
           <!-- Esto es el carrussel -->
-          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active mh-80" id="foto1">
+              <div class="carousel-item active" id="foto1">
+                
               </div>
-              <div class="carousel-item mh-80" id="foto2">
-
+              <div class="carousel-item" id="foto2">
+                
               </div>
-              <div class="carousel-item mh-80" id="foto3">
-
+              <div class="carousel-item" id="foto3">
+                
               </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
           </div>
-          <div class="col-md-12">
+          <div class="col-md-12 mt-5">
             <ul class="list-group">
               <li class="list-group-item list-group-item-info" id="tipo"></li>
               <li class="list-group-item list-group-item-info" id="raza"></li>
@@ -257,9 +263,9 @@
         console.log(response)
         for (var i = 0; i < response.length; i++) {
           console.log(response[i]);
-          var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+          var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img class='rounded' src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body text-center'><h5 class='card-title'>" + response[i].nombre +
             "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "</p><div class='botonficha text-center'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
             "'>Ficha</button></div></div></div>";
           $("#prueba").append(card)
         }
@@ -294,64 +300,54 @@
           for (var i = 0; i < response.length; i++) {
             if (perro === true) {
               if (response[i].tipo === 'Perro') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (gato === true) {
               if (response[i].tipo === 'Gato') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (pajaro === true) {
               if (response[i].tipo === 'Pajaro') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (iguana === true) {
               if (response[i].tipo === 'Iguana') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (otro === true) {
               if (response[i].tipo === 'Otro') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             } else {
-              $.ajax({
-                type: 'GET',
-                url: 'http://127.0.0.1:8000/adp',
-                success: function (response) {
-                  console.log(response)
-                  for (var i = 0; i < response.length; i++) {
-                    console.log(response[i]);
-                    var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                      "</h5><p class='card-text'>" + response[i].detalles +
-                      "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                      "'>Ficha</button></div></div></div>";
-                    $("#prueba").append(card)
-                  }
-                }
-              })
+              var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
+                $("#prueba").append(card)
 
             }
           }
@@ -375,37 +371,27 @@
           for (var i = 0; i < response.length; i++) {
             if (macho === true) {
               if (response[i].sexo === 'Masculino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (hembra === true) {
               if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             } else {
-              $.ajax({
-                type: 'GET',
-                url: 'http://127.0.0.1:8000/adp',
-                success: function (response) {
-                  console.log(response)
-                  for (var i = 0; i < response.length; i++) {
-                    console.log(response[i]);
-                    var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                      "</h5><p class='card-text'>" + response[i].detalles +
-                      "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                      "'>Ficha</button></div></div></div>";
-                    $("#prueba").append(card)
-                  }
-                }
-              })
+              var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
+                $("#prueba").append(card)
             }
           }
         }
@@ -487,196 +473,186 @@
       }
       $.ajax({
         type: 'GET',
-        url: 'http://127.0.0.1:8000/filter/adp',
+        url: 'http://127.0.0.1:8000/adp',
         success: function (response) {
           $("#prueba").empty();
           for (var i = 0; i < response.length; i++) {
             if (andalucia === true) {
-              if (response[i].sexo === 'Masculino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Andalucia') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (aragon === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Aragón') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (cantabria === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Cantabria') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (cmancha === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Castilla-La Mancha') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (cleon === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Castilla y León') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (cataluña === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Cataluña') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (ceuta === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Ceuta') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (madrid === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Comunidad de Madrid') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (navarra === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Comunidad Foral de Navarra') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (valencia === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Comunidad Valenciana') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (extremadura === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Extremadura') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (galicia === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Galicia') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (baleares === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Islas Baleares') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (canarias === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Islas Canarias') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (rioja === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'La Rioja') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (melilla === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Melilla') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (paisvasco === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'País Vasco') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (asturias === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Principado de Asturias') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             }
             else if (murcia === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3' style='width: 18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                  "</h5><p class='card-text'>" + response[i].detalles +
-                  "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                  "'>Ficha</button></div></div></div>";
+              if (response[i].cuidad === 'Región de Murcia') {
+                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
                 $("#prueba").append(card)
               }
             } else {
-              $.ajax({
-                type: 'GET',
-                url: 'http://127.0.0.1:8000/adp',
-                success: function (response) {
-                  console.log(response)
-                  for (var i = 0; i < response.length; i++) {
-
-                    var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-                      "</h5><p class='card-text'>" + response[i].detalles +
-                      "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-                      "'>Ficha</button></div></div></div>";
-                    $("#prueba").append(card)
-                  }
-                }
-              })
+              var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+            "</h5><p class='card-text'>" + response[i].detalles +
+            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+            "'>Ficha</button></div></div></div>";
+                $("#prueba").append(card)
             }
           }
         }
@@ -692,9 +668,9 @@
         $('#foto1').empty();
         $('#foto2').empty();
         $('#foto3').empty();
-        $('#foto1').append("<img src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_1 + "'></img>")
-        $('#foto2').append("<img src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_2 + "'></img>")
-        $('#foto3').append("<img src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_3 + "'></img>")
+        $('#foto1').append("<img class='rounded d-block w-100' style='height:400px' src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_1 + "'></img>")
+        $('#foto2').append("<img class='rounded d-block w-100' style='height:400px' src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_2 + "'></img>")
+        $('#foto3').append("<img class='rounded d-block w-100' style='height:400px' src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_3 + "'></img>")
 
         if (response.adopcion.usuarios_id === localStorage.getItem("username")) {
           var editar = "<button type='button' class='btn btn-warning' id='btnimg' data-id='" + response.adopcion.id + "'>Subir imágenes</button>"
