@@ -126,7 +126,7 @@ $(document).ready(function() {
 $("#comunidad").change(function() {
     var val = $(this).val();
     if(val == "Andalucia"){
-        console.log("Hola")
+     
         $("#provincia").empty()
         var andalucia ="<option value='Granada'>Granada</option><option value='Málaga'>Málaga</option><option value='Sevilla'>Sevilla</option><option value='Huelva'>Huelva</option><option value='Almería'>Almería</option><option value='Cordoba'>Cordoba</option><option value='Cádiz'>Cádiz</option><option value='Jaén'>Jaén</option>"
         $("#provincia").append(andalucia)
@@ -277,53 +277,51 @@ $("#boton").on("click",function(){
                     $('#adpid').val(response.adp.id)
                 }
                 if (response.code === 404) {
-                    console.log(response)
-                    console.log('1')
+                 
                     if (typeof response.message.tipo !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.tipo + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('2')
+                     
                     }
                     if (typeof response.message.edad !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.edad + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('entramos2')
-                        console.log('3')
+                      
                     }
                     if (typeof response.message.raza !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.raza + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('4')
+                      
                     }
                     if (typeof response.message.comunidad !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.comunidad + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('5')
+                        
                     }
                     if (typeof response.message.provincia !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.provincia + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('6')
+                        
                     }
                     if (typeof response.message.detalles !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.detalles + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('7')
+                   
                     }
                     if (typeof response.message.image_0 !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.image_1 + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('8')
+                       
                     }
                     if (typeof response.message.image_1 !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.image_2 + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('9')
+                        
                     }
                     if (typeof response.message.image_4 !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.image_3 + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('10')
+                      
                     }
                 }
             }
@@ -365,7 +363,7 @@ $("#boton").on("click",function(){
                 document.location.href="principal.html";
             }if (response.code===404){
                 alert('No se han podido subir las imágenes correctamente, vuelve a intentarlo.')
-                console.log(response)
+               
             }
             
         }

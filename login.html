@@ -109,36 +109,36 @@
                     $("#respuesta").html(codigo)
                 }
                 if (response.code === 404) {
-                    console.log('1')
+                  
                     if (typeof response.errors.user !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.user + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('2')
+                        
                     }
                     if (typeof response.errors.nombre !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.nombre + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('3')
+                        
                     }
                     if (typeof response.errors.apellidos !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.apellidos + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('4')
+                       
                     }
                     if (typeof response.errors.email !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.email + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('5')
+                        
                     }
                     if (typeof response.errors.password !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.password + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('6')
+                     
                     }
                     if (typeof response.errors.telefono !== 'undefined') {
                         var codigo = "<div class=\"alert alert-danger\" role=\"alert\">\n" + response.errors.telefono + "</div>";
                         $("#respuesta").html(codigo)
-                        console.log('7')
+                        
                     }
                 }
             }
@@ -159,9 +159,9 @@
                 json: JSON.stringify(loggear)
             },
             success:function(response){
-                console.log(response)
+              
                 if (response.code === 404) {
-                    console.log(response)
+                   
                     if(typeof response.message !== 'undefined'){
                         var error = "<div class='alert alert-danger' role='alert'> "+ response.message +" </div>"
                         $("#loginerrors").append(error)
