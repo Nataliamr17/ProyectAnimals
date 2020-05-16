@@ -5,259 +5,270 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyect Animals</title>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="principal.css">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+          integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
 </head>
 <body>
-    <div class="row">
-        <div class="col-xl-12">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="principal.html"><img src="img/logo.png" width="100px" class="ml-5"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse d-flex justify-content-around " id="navbarNav">
-                  <ul class="navbar-nav ">
+<div class="row">
+    <div class="col-xl-12">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="principal.html"><img src="img/logo.png" width="100px" class="ml-5"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-around " id="navbarNav">
+                <ul class="navbar-nav ">
                     <li class="nav-item active mr-3">
-                      <a class="nav-link" href="principal.html"><h4>INICIO</h4></a>
+                        <a class="nav-link" href="principal.html"><h4>INICIO</h4></a>
                     </li>
                     <li class="nav-item mr-3">
-                      <a class="nav-link" href="ficha.html"><h4>CREAR FICHA</h4></a>
+                        <a class="nav-link" href="ficha.html"><h4>CREAR FICHA</h4></a>
                     </li>
                     <li class="nav-item mr-3">
-                      <a class="nav-link" href="perfil.html"><h4>TU PERFIL</h4></a>
+                        <a class="nav-link" href="perfil.html"><h4>TU PERFIL</h4></a>
                     </li>
                     <li class="nav-item mr-3">
-                      <a class="nav-link" href="mensajes.html"><h4>MENSAJES</h4></a>
+                        <a class="nav-link" href="mensajes.html"><h4>MENSAJES</h4></a>
                     </li>
-                   </ul>
-                   <span class="navbar-text">
+                </ul>
+                <span class="navbar-text">
                     <div id="datosusu"> 
                     </div>
                     
                   </span>
-                </div>
-              </nav>
-        </div>
-    </div> <br><br>
-    <div class="row justify-content-center">
-      <div class="col-5 text-light">
+            </div>
+        </nav>
+    </div>
+</div>
+<br><br>
+<div class="row justify-content-center">
+    <div class="col-5 text-light">
         <h3>-- BANDEJA DE ENTRADA --</h3>
 
-      </div>
     </div>
-    <div class="row justify-content-md-center">
-      <div class="col-2">
+</div>
+<div class="row justify-content-md-center">
+    <div class="col-2">
         <div class="btn-group-vertical">
-        <a href="mensajes.html"><button type="button" class="btn btn-info btn-lg rounded-pill">Bandeja entrada</button></a> <br> <br>
-          <button type="button" id="creamsj" class="btn btn-outline-info btn-lg rounded-pill">Crear mensaje</button> <br> <br>
+            <a href="mensajes.html">
+                <button type="button" class="btn btn-info btn-lg rounded-pill">Bandeja entrada</button>
+            </a> <br> <br>
+            <button type="button" id="creamsj" class="btn btn-outline-info btn-lg rounded-pill">Crear mensaje</button>
+            <br> <br>
         </div>
-        
-      </div>
-      
-      <div class="col-8 bg-light border border-info"> 
 
-       
+    </div>
+
+    <div class="col-8 bg-light border border-info">
+
+
         <ul class="list-group" id="bandeja">
-          <!-- <li class="list-group-item"></li> -->
+            <!-- <li class="list-group-item"></li> -->
         </ul>
-      </div>
     </div>
-    <!-- Modal VER MENSAJE -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+</div>
+<!-- Modal VER MENSAJE -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="ejemplomodal">Mensaje</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" id="bodymodal">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
-            <button type="button" class="btn btn-primary" id="enviarmensaje" data-toggle="modal" data-target="#mensajerespuesta">Responder</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal ENVIAR MENSAJE -->
-    <div class="modal fade" id="mensajerespuesta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Nuevo Mensaje</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                <h5 class="modal-title" id="ejemplomodal">Mensaje</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Destinatario:</label>
-                  <input type="text" class="form-control" id="destinatario">
-                </div>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Titulo:</label>
-                  <input type="text" class="form-control" id="titulomsj">
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Mensaje:</label>
-                  <textarea class="form-control" id="texto"></textarea>
-                </div>
-              </form>
+            <div class="modal-body" id="bodymodal">
+                ...
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary" id="respuestamsj">Enviar mensaje</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+                <button type="button" class="btn btn-primary" id="enviarmensaje" data-toggle="modal"
+                        data-target="#mensajerespuesta">Responder
+                </button>
             </div>
-          </div>
         </div>
-      </div>
-      <footer class="page-footer font-small bg-white pt-4 ">
+    </div>
+</div>
+<!-- Modal ENVIAR MENSAJE -->
+<div class="modal fade" id="mensajerespuesta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Mensaje</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Destinatario:</label>
+                        <input type="text" class="form-control" id="destinatario">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Titulo:</label>
+                        <input type="text" class="form-control" id="titulomsj">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Mensaje:</label>
+                        <textarea class="form-control" id="texto"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="respuestamsj">Enviar mensaje</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small bg-white pt-4 fixed-bottom">
 
-        <div class="container-fluid text-center text-md-left">
-          <div class="row">
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
             <div class="col-md-4 mt-md-0 mt-3 text-center">
-      
-              <h5 class="text-uppercase"><strong> PROYECT ANIMALS</strong></h5>
-              <p>¡¡ Tu web para dar o adoptar !!</p>
+
+                <h5 class="text-uppercase"><strong> PROYECT ANIMALS</strong></h5>
+                <p>¡¡ Tu web para dar o adoptar !!</p>
             </div>
             <hr class="clearfix w-100 d-md-none pb-3">
             <div class="col-md-4 mb-md-0 mb-3 text-center">
-              <img src="img/logo.png" width="80px" class="ml-5"> 
+                <img src="img/logo.png" width="80px" class="ml-5">
             </div>
-              <div class="col-md-4 mb-md-0 mb-3">
-      
-              <h5 class="text-uppercase"><strong>Nuestras RRSS</strong></h5>
-              <i class="fab fa-facebook-f mr-2"></i>
-              <i class="fab fa-twitter mr-2"></i>
-              <i class="fab fa-youtube mr-2"></i>
-              <i class="far fa-envelope mr-2"></i>
-              <i class="fab fa-instagram mr-2"></i>
+            <div class="col-md-4 mb-md-0 mb-3">
+
+                <h5 class="text-uppercase"><strong>Nuestras RRSS</strong></h5>
+                <i class="fab fa-facebook-f mr-2"></i>
+                <i class="fab fa-twitter mr-2"></i>
+                <i class="fab fa-youtube mr-2"></i>
+                <i class="far fa-envelope mr-2"></i>
+                <i class="fab fa-instagram mr-2"></i>
             </div>
-         
-          </div>
-         </div>
-       </footer>
-    <script src="js/jquery-3.1.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        </div>
+    </div>
+</footer>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 <script>
-  $(document).ready(function () {
-    if(localStorage.getItem("username") !== "undefined"){
-      $("#datosusu").html("Bienvenido: "+localStorage.getItem("username")+' ! <i class="fas fa-sign-out-alt" id="logout"></i>')
-    }
-      $(document).on("click","#logout",function(){
-        localStorage.removeItem("token")
-        localStorage.removeItem("userid")
-        localStorage.removeItem("username")
-        alert("Sesión cerrada.")/* to do: Cambiar redirect por entradas dinamicas de li en funcion de si esta logged o no*/
-        document.location.href="index.html";
-      })
-    
-
- 
-    $.ajax({
-      url: 'http://127.0.0.1:8000/msj/user',
-      type: 'GET',
-      headers:{
-        Authorization: localStorage.getItem("token")
-      },
-      success: function(response){
-         for (var i = 0; i < response.msj.length; i++){
-         var html= '<li class="list-group-item mt-5"> <button type="button" id="borramsj"  data-id="'+response.msj[i].id+'" class="btn btn-danger mr-5">Eliminar</button> '+ response.msj[i].titulo+'</li><button type="button" id="botonmensaje" data-id="'+response.msj[i].id+'"data-user="'+response.msj[i].from_users_id+'" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal">Ver Mensaje</button><br>'
-          $('#bandeja').append(html)
+    $(document).ready(function () {
+        if (localStorage.getItem("username") !== "undefined") {
+            $("#datosusu").html("Bienvenido: " + localStorage.getItem("username") + ' ! <i class="fas fa-sign-out-alt" id="logout"></i>')
         }
-      }
+        $(document).on("click", "#logout", function () {
+            localStorage.removeItem("token")
+            localStorage.removeItem("userid")
+            localStorage.removeItem("username")
+            alert("Sesión cerrada.")/* to do: Cambiar redirect por entradas dinamicas de li en funcion de si esta logged o no*/
+            document.location.href = "index.html";
+        })
+
+
+        $.ajax({
+            url: 'http://127.0.0.1:8000/msj/user',
+            type: 'GET',
+            headers: {
+                Authorization: localStorage.getItem("token")
+            },
+            success: function (response) {
+                for (var i = 0; i < response.msj.length; i++) {
+                    var html = '<li class="list-group-item mt-5"> <button type="button" id="borramsj"  data-id="' + response.msj[i].id + '" class="btn btn-danger mr-5">Eliminar</button> ' + response.msj[i].titulo + '</li><button type="button" id="botonmensaje" data-id="' + response.msj[i].id + '"data-user="' + response.msj[i].from_users_id + '" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal">Ver Mensaje</button><br>'
+                    $('#bandeja').append(html)
+                }
+            }
+        })
+        $(document).on("click", "#botonmensaje", function () {
+            var usuario = $(this).data("user")
+            $('#destinatario').val(usuario)
+            var id = $(this).data("id")
+            $.ajax({
+                url: 'http://127.0.0.1:8000/msj/' + id,
+                type: 'GET',
+                headers: {
+                    Authorization: localStorage.getItem("token")
+                },
+                success: function (response) {
+                    $("#ejemplomodal").empty()
+                    var titulo = "<p>" + "Titulo: " + response.msj.titulo + "</p>"
+                    $("#ejemplomodal").append(titulo)
+                    $("#bodymodal").empty()
+                    var body = "De: " + usuario + "<p><br>" + "Mensaje: " + response.msj.contenido + "</p>" + "<br>Enviado el: " + response.msj.created_at
+                    $("#bodymodal").append(body)
+                }
+            })
+        })
     })
-    $(document).on("click","#botonmensaje",function(){
-      var usuario= $(this).data("user")
-      $('#destinatario').val(usuario)
-      var id = $(this).data("id")
-      $.ajax({
-        url:'http://127.0.0.1:8000/msj/'+id,
-        type: 'GET',
-        headers:{
-        Authorization: localStorage.getItem("token")
-      },
-      success: function(response){
-        $("#ejemplomodal").empty()
-        var titulo = "<p>"+"Titulo: "+response.msj.titulo+"</p>"
-        $("#ejemplomodal").append(titulo)
-        $("#bodymodal").empty()
-        var body = "De: "+usuario+"<p><br>"+"Mensaje: "+response.msj.contenido+"</p>"+"<br>Enviado el: "+ response.msj.created_at 
-        $("#bodymodal").append(body)
-      }
-      })
+    $(document).on("click", "#creamsj", function () {
+        $('#destinatario').val("")
+        $("#mensajerespuesta").modal("show")
     })
-  })
-  $(document).on("click","#creamsj", function(){
-    $('#destinatario').val("")
-    $("#mensajerespuesta").modal("show")
-  })
-  
+
     $(document).on("click", "#respuestamsj", function () {
-     
-      var destinatario = $('#destinatario').val()
-      var texto = $('#texto').val()
-      var titulo = $('#titulomsj').val()
-      var json = {
-        'to_users_id': destinatario,
-        'titulo': titulo,
-        'contenido': texto,
 
-      }
-      $.ajax({
-        type: 'POST',
-        url: 'http://127.0.0.1:8000/msj',
-        headers: {
-          Authorization: localStorage.getItem("token")
-        },
-        data: {
-          json: JSON.stringify(json)
-        },
-        success: function (response) {
-          if (response.code === 200) {
-            alert("Mensaje enviado correctamente.")
-            document.location.href = "principal.html";
-          }
-          else {
-            alert(response.message)
-          }
+        var destinatario = $('#destinatario').val()
+        var texto = $('#texto').val()
+        var titulo = $('#titulomsj').val()
+        var json = {
+            'to_users_id': destinatario,
+            'titulo': titulo,
+            'contenido': texto,
+
         }
-      })
+        $.ajax({
+            type: 'POST',
+            url: 'http://127.0.0.1:8000/msj',
+            headers: {
+                Authorization: localStorage.getItem("token")
+            },
+            data: {
+                json: JSON.stringify(json)
+            },
+            success: function (response) {
+                if (response.code === 200) {
+                    alert("Mensaje enviado correctamente.")
+                    document.location.href = "principal.html";
+                } else {
+                    alert(response.message)
+                }
+            }
+        })
 
     })
     /*Funcion borrado mensaje*/
-    $(document).on("click","#borramsj", function(){
-      var id= $(this).data("id")
-      
-      $.ajax({
-    type: 'PUT',
-    url:'http://127.0.0.1:8000/msj/delete/'+id,
-    headers:{
-            Authorization:localStorage.getItem("token")
-        },
-    success:function(response){
-      if(response.code === 200){
-        alert("El mensaje se ha eliminado con exito.")
-      document.location.href = "mensajes.html";
-      }
-      else{
-        alert(response.message)
-      }
-     
-    }
-    
-    })
+    $(document).on("click", "#borramsj", function () {
+        var id = $(this).data("id")
+
+        $.ajax({
+            type: 'PUT',
+            url: 'http://127.0.0.1:8000/msj/delete/' + id,
+            headers: {
+                Authorization: localStorage.getItem("token")
+            },
+            success: function (response) {
+                if (response.code === 200) {
+                    alert("El mensaje se ha eliminado con exito.")
+                    document.location.href = "mensajes.html";
+                } else {
+                    alert(response.message)
+                }
+
+            }
+
+        })
     })
 </script>
 </html>

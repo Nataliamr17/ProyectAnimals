@@ -2,868 +2,845 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proyect Animals</title>
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="principal.css">
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
-    integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyect Animals</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="principal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+          integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
 </head>
 
 <body>
 
-  <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
-      <div class="col-xl-12">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="principal.html"><img src="img/logo.png" width="100px" class="ml-5"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarNav">
-            <ul class="navbar-nav ">
-              <li class="nav-item active mr-3">
-                <a class="nav-link" href="principal.html">
-                  <h4>INICIO</h4>
-                </a>
-              </li>
-              <li class="nav-item mr-3">
-                <a class="nav-link" href="ficha.html">
-                  <h4>CREAR FICHA</h4>
-                </a>
-              </li>
-              <li class="nav-item mr-3">
-                <a class="nav-link" href="perfil.html">
-                  <h4>TU PERFIL</h4>
-                </a>
-              </li>
-              <li class="nav-item mr-3">
-                <a class="nav-link" href="mensajes.html">
-                  <h4>MENSAJES</h4>
-                </a>
-              </li>
+        <div class="col-xl-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="principal.html"><img src="img/logo.png" width="100px" class="ml-5"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarNav">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item active mr-3">
+                            <a class="nav-link" href="principal.html">
+                                <h4>INICIO</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link" href="ficha.html">
+                                <h4>CREAR FICHA</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link" href="perfil.html">
+                                <h4>TU PERFIL</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link" href="mensajes.html">
+                                <h4>MENSAJES</h4>
+                            </a>
+                        </li>
 
-            </ul>
-            <span class="navbar-text">
+                    </ul>
+                    <span class="navbar-text">
               <div id="datosusu">
               </div>
 
             </span>
-          </div>
-        </nav>
-      </div>
+                </div>
+            </nav>
+        </div>
     </div>
     <div class="row">
-      <div class="col-xl-2 col-md-2 col-xs-1">
-        <div class="bg-secondary text-white">
-          <ul id="animal"><br>
-            <div class="caja" id="testi">
-              <h5>ANIMAL</h5>
+        <div class="col-xl-2 col-md-2 col-xs-1">
+            <div class="bg-secondary text-white">
+                <ul id="animal"><br>
+                    <div class="caja" id="testi">
+                        <h5>ANIMAL</h5>
+                    </div>
+                    <input name="animal" type="checkbox" value="perro" id="perro"> Perro <br>
+                    <input name="animal" type="checkbox" value="gato" id="gato"> Gato <br>
+                    <input name="animal" type="checkbox" value="pajaro" id="pajaro"> Pájaro <br>
+                    <input name="animal" type="checkbox" value="iguana" id="iguana"> Iguana <br>
+                    <input name="animal" type="checkbox" value="otro" id="otro"> Otro <br>
+                </ul>
+                <ul id="sexobusc">
+                    <div class="caja">
+                        <h5>SEXO</h5>
+                    </div>
+                    <input name="sexo" type="checkbox" value="macho" id="macho"> Macho <br>
+                    <input name="sexo" type="checkbox" value="hembra" id="hembra"> Hembra <br>
+                </ul>
+                <ul id="ccaa">
+                    <div class="caja">
+                        <h5>COMUNIDAD AUTONOMA</h5>
+                    </div>
+                    <input name="ccaa" type="checkbox" id="fandalucia" value="andalucia"> Andalucía <br>
+                    <input name="ccaa" type="checkbox" id="faragon" value="aragon"> Aragón <br>
+                    <input name="ccaa" type="checkbox" id="fcantabria" value="cantabria"> Cantabria <br>
+                    <input name="ccaa" type="checkbox" id="fmancha" value="mancha"> Castilla la Mancha <br>
+                    <input name="ccaa" type="checkbox" id="fleon" value="leon"> Castilla León <br>
+                    <input name="ccaa" type="checkbox" id="fcataluña" value="cataluña"> Cataluña <br>
+                    <input name="ccaa" type="checkbox" id="fceuta" value="ceuta"> Ceuta <br>
+                    <input name="ccaa" type="checkbox" id="fmadrid" value="madrid"> Comunidad de Madrid <br>
+                    <input name="ccaa" type="checkbox" id="fnavarra" value="navarra"> Comunidad Foral de Navarra <br>
+                    <input name="ccaa" type="checkbox" id="fvalencia" value="valenciana"> Comunidad Valenciana <br>
+                    <input name="ccaa" type="checkbox" if="fextremadura" value="extremadura"> Extremadura <br>
+                    <input name="ccaa" type="checkbox" id="fgalicia" value="galicia"> Galicia <br>
+                    <input name="ccaa" type="checkbox" if="fbaleares" value="baleares"> Islas Baleares <br>
+                    <input name="ccaa" type="checkbox" if="fcanarias" value="canarias"> Islas Canarias <br>
+                    <input name="ccaa" type="checkbox" id="frioja" value="rioja"> La Rioja <br>
+                    <input name="ccaa" type="checkbox" id="fmelilla" value="melilla"> Melilla <br>
+                    <input name="ccaa" type="checkbox" id="fpaisvasco" value="paisvasco"> País Vasco <br>
+                    <input name="ccaa" type="checkbox" id="fasturias" value="asturias"> Principado de Asturias <br>
+                    <input name="ccaa" type="checkbox" id="fmurcia" value="murcia"> Región de Murcia <br>
+                </ul>
             </div>
-            <input name="animal" type="checkbox" value="perro" id="perro"> Perro <br>
-            <input name="animal" type="checkbox" value="gato" id="gato"> Gato <br>
-            <input name="animal" type="checkbox" value="pajaro" id="pajaro"> Pájaro <br>
-            <input name="animal" type="checkbox" value="iguana" id="iguana"> Iguana <br>
-            <input name="animal" type="checkbox" value="otro" id="otro"> Otro <br>
-          </ul>
-          <ul id="sexobusc">
-            <div class="caja">
-              <h5>SEXO</h5>
-            </div>
-            <input name="sexo" type="checkbox" value="macho" id="macho"> Macho <br>
-            <input name="sexo" type="checkbox" value="hembra" id="hembra"> Hembra <br>
-          </ul>
-          <ul id="ccaa">
-            <div class="caja">
-              <h5>COMUNIDAD AUTONOMA</h5>
-            </div>
-            <input name="ccaa" type="checkbox" id="fandalucia" value="andalucia"> Andalucía <br>
-            <input name="ccaa" type="checkbox" id="faragon" value="aragon"> Aragón <br>
-            <input name="ccaa" type="checkbox" id="fcantabria" value="cantabria"> Cantabria <br>
-            <input name="ccaa" type="checkbox" id="fmancha" value="mancha"> Castilla la Mancha <br>
-            <input name="ccaa" type="checkbox" id="fleon" value="leon"> Castilla León <br>
-            <input name="ccaa" type="checkbox" id="fcataluña" value="cataluña"> Cataluña <br>
-            <input name="ccaa" type="checkbox" id="fceuta" value="ceuta"> Ceuta <br>
-            <input name="ccaa" type="checkbox" id="fmadrid" value="madrid"> Comunidad de Madrid <br>
-            <input name="ccaa" type="checkbox" id="fnavarra" value="navarra"> Comunidad Foral de Navarra <br>
-            <input name="ccaa" type="checkbox" id="fvalencia" value="valenciana"> Comunidad Valenciana <br>
-            <input name="ccaa" type="checkbox" if="fextremadura" value="extremadura"> Extremadura <br>
-            <input name="ccaa" type="checkbox" id="fgalicia" value="galicia"> Galicia <br>
-            <input name="ccaa" type="checkbox" if="fbaleares" value="baleares"> Islas Baleares <br>
-            <input name="ccaa" type="checkbox" if="fcanarias" value="canarias"> Islas Canarias <br>
-            <input name="ccaa" type="checkbox" id="frioja" value="rioja"> La Rioja <br>
-            <input name="ccaa" type="checkbox" id="fmelilla" value="melilla"> Melilla <br>
-            <input name="ccaa" type="checkbox" id="fpaisvasco" value="paisvasco"> País Vasco <br>
-            <input name="ccaa" type="checkbox" id="fasturias" value="asturias"> Principado de Asturias <br>
-            <input name="ccaa" type="checkbox" id="fmurcia" value="murcia"> Región de Murcia <br>
-          </ul>
-        </div>
 
 
-      </div>
-      <div class="col-xl-10 col-md-10 col-xs-1">
-        <div id="prueba">
         </div>
-      </div>
+        <div class="col-xl-10 col-md-10 col-xs-1">
+            <div id="prueba">
+            </div>
+        </div>
     </div>
-  </div>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-    aria-hidden="true">
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="titulo"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- Esto es el carrussel -->
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active" id="foto1">
-                
-              </div>
-              <div class="carousel-item" id="foto2">
-                
-              </div>
-              <div class="carousel-item" id="foto3">
-                
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-          <div class="col-md-12 mt-5">
-            <ul class="list-group">
-              <li class="list-group-item list-group-item-info" id="tipo"></li>
-              <li class="list-group-item list-group-item-info" id="raza"></li>
-              <li class="list-group-item list-group-item-info" id="edad"></li>
-              <li class="list-group-item list-group-item-info" id="sexo"></li>
-              <li class="list-group-item list-group-item-info" id="c_a"></li>
-              <li class="list-group-item list-group-item-info" id="provincia"></li>
-              <li class="list-group-item list-group-item-info" id="adoptedby"></li>
-
-            </ul>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <div id=btn-adp></div>
-          <div id="editar"></div>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-            data-whatever="@mdo" id="sms">¡Me interesa!</button>
-
-        </div>
-      </div>
-
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
+        <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Nuevo Mensaje</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                <h5 class="modal-title" id="titulo"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Destinatario:</label>
-                  <input type="text" class="form-control" id="destinatario">
+                <!-- Esto es el carrussel -->
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" id="foto1">
+
+                        </div>
+                        <div class="carousel-item" id="foto2">
+
+                        </div>
+                        <div class="carousel-item" id="foto3">
+
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Titulo:</label>
-                  <input type="text" class="form-control" id="titulomsj">
+                <div class="col-md-12 mt-5">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-info" id="tipo"></li>
+                        <li class="list-group-item list-group-item-info" id="raza"></li>
+                        <li class="list-group-item list-group-item-info" id="edad"></li>
+                        <li class="list-group-item list-group-item-info" id="sexo"></li>
+                        <li class="list-group-item list-group-item-info" id="c_a"></li>
+                        <li class="list-group-item list-group-item-info" id="provincia"></li>
+                        <li class="list-group-item list-group-item-info" id="adoptedby"></li>
+
+                    </ul>
                 </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Mensaje:</label>
-                  <textarea class="form-control" id="texto"></textarea>
-                </div>
-              </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary" id="enviarsms">Enviar mensaje</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="editarfotos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Sube tus imágenes</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form id="formimg">
-          <div class="modal-body">
-            <input type="file" id="file1">
-            <input type="file" id="file2">
-            <input type="file" id="file3">
-          </div>
+                <div id=btn-adp></div>
+                <div id="editar"></div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-whatever="@mdo" id="sms">¡Me interesa!
+                </button>
 
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary "data-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary" id="subirimg">Subir imágenes</button>
-          </div>
-        </form>
-      </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nuevo Mensaje</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Destinatario:</label>
+                                <input type="text" class="form-control" id="destinatario">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Titulo:</label>
+                                <input type="text" class="form-control" id="titulomsj">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Mensaje:</label>
+                                <textarea class="form-control" id="texto"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="enviarsms">Enviar mensaje</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="modal" id="adoptar" tabindex="-1" role="dialog">
+</div>
+<div class="modal fade" id="editarfotos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">¡Enhorabuena! Han adoptado a tu animal!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sube tus imágenes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="formimg">
+                <div class="modal-body">
+                    <input type="file" id="file1">
+                    <input type="file" id="file2">
+                    <input type="file" id="file3">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary " data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" id="subirimg">Subir imágenes</button>
+                </div>
+            </form>
         </div>
-        <div class="modal-body">
-          <p>Introduce el nombre del usuario que ha adoptado a tu animal</p>
-          <input type="hidden" id="adpid">
-          <input type="text" id="adoptado">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-success" id="saveadp">Guardar</button>
-        </div>
-      </div>
     </div>
-  </div>
-  <!-- Footer -->
+</div>
+<div class="modal" id="adoptar" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">¡Enhorabuena! Han adoptado a tu animal!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Introduce el nombre del usuario que ha adoptado a tu animal</p>
+                <input type="hidden" id="adpid">
+                <input type="text" id="adoptado">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-success" id="saveadp">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
 <footer class="page-footer font-small bg-white pt-4 ">
 
-  <div class="container-fluid text-center text-md-left">
-    <div class="row">
-      <div class="col-md-4 mt-md-0 mt-3 text-center">
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <div class="col-md-4 mt-md-0 mt-3 text-center">
 
-        <h5 class="text-uppercase"><strong> PROYECT ANIMALS</strong></h5>
-        <p>¡¡ Tu web para dar o adoptar !!</p>
-      </div>
-      <hr class="clearfix w-100 d-md-none pb-3">
-      <div class="col-md-4 mb-md-0 mb-3 text-center">
-        <img src="img/logo.png" width="80px" class="ml-5"> 
-      </div>
-        <div class="col-md-4 mb-md-0 mb-3">
+                <h5 class="text-uppercase"><strong> PROYECT ANIMALS</strong></h5>
+                <p>¡¡ Tu web para dar o adoptar !!</p>
+            </div>
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <div class="col-md-4 mb-md-0 mb-3 text-center">
+                <img src="img/logo.png" width="80px" class="ml-5">
+            </div>
+            <div class="col-md-4 mb-md-0 mb-3">
 
-        <h5 class="text-uppercase"><strong>Nuestras RRSS</strong></h5>
-        <i class="fab fa-facebook-f mr-2"></i>
-        <i class="fab fa-twitter mr-2"></i>
-        <i class="fab fa-youtube mr-2"></i>
-        <i class="far fa-envelope mr-2"></i>
-        <i class="fab fa-instagram mr-2"></i>
-      </div>
-   
+                <h5 class="text-uppercase"><strong>Nuestras RRSS</strong></h5>
+                <i class="fab fa-facebook-f mr-2"></i>
+                <i class="fab fa-twitter mr-2"></i>
+                <i class="fab fa-youtube mr-2"></i>
+                <i class="far fa-envelope mr-2"></i>
+                <i class="fab fa-instagram mr-2"></i>
+            </div>
+
+        </div>
     </div>
-   </div>
- </footer>
+</footer>
 
-  <script src="js/jquery-3.1.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 <script>
 
-  $(document).ready(function () {
-    if (localStorage.getItem("username") !== "undefined") {
-      $("#datosusu").html("Bienvenido: " + localStorage.getItem("username") + ' ! <i class="fas fa-sign-out-alt" id="logout"></i>')
-    }
-    $(document).on("click", "#logout", function () {
-      localStorage.removeItem("token")
-      localStorage.removeItem("userid")
-      localStorage.removeItem("username")
-      alert("Sesión cerrada.")/* to do: Cambiar redirect por entradas dinamicas de li en funcion de si esta logged o no*/
-      document.location.href = "index.html";
-    })
+    $(document).ready(function () {
+        if (localStorage.getItem("username") !== "undefined") {
+            $("#datosusu").html("Bienvenido: " + localStorage.getItem("username") + ' ! <i class="fas fa-sign-out-alt" id="logout"></i>')
+        }
+        $(document).on("click", "#logout", function () {
+            localStorage.removeItem("token")
+            localStorage.removeItem("userid")
+            localStorage.removeItem("username")
+            alert("Sesión cerrada.")/* to do: Cambiar redirect por entradas dinamicas de li en funcion de si esta logged o no*/
+            document.location.href = "index.html";
+        })
 
-    $.ajax({
-      type: 'GET',
-      url: 'http://127.0.0.1:8000/adp',
-      success: function (response) {
-       
-        for (var i = 0; i < response.length; i++) {
-          
-          var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img class='rounded' src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body text-center'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha text-center'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-          $("#prueba").append(card)
-        }
-      }
-    })
-    $('#animal').on("change", function () {
-      var perro = false;
-      var gato = false;
-      var pajaro = false;
-      var iguana = false;
-      var otro = false;
-      if ($('#perro').is(':checked')) {
-        perro = true;
-      }
-      if ($('#gato').is(':checked')) {
-        gato = true;
-      }
-      if ($('#pajaro').is(':checked')) {
-        pajaro = true;
-      }
-      if ($('#iguana').is(':checked')) {
-        iguana = true;
-      }
-      if ($('#otro').is(':checked')) {
-        otro = true;
-      }
-      $.ajax({
-        type: 'GET',
-        url: 'http://127.0.0.1:8000/adp',
-        success: function (response) {
-          $("#prueba").empty();
-          for (var i = 0; i < response.length; i++) {
-            if (perro === true) {
-              if (response[i].tipo === 'Perro') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (gato === true) {
-              if (response[i].tipo === 'Gato') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (pajaro === true) {
-              if (response[i].tipo === 'Pajaro') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (iguana === true) {
-              if (response[i].tipo === 'Iguana') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (otro === true) {
-              if (response[i].tipo === 'Otro') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            } else {
-              var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
+        $.ajax({
+            type: 'GET',
+            url: 'http://127.0.0.1:8000/adp',
+            success: function (response) {
 
-            }
-          }
-        }
-      })
-    })
-    $('#sexobusc').on("change", function () {
-      var macho = false;
-      var hembra = false;
-      if ($('#macho').is(':checked')) {
-        macho = true;
-      }
-      if ($('#hembra').is(':checked')) {
-        hembra = true;
-      }
-      $.ajax({
-        type: 'GET',
-        url: 'http://127.0.0.1:8000/adp',
-        success: function (response) {
-          $("#prueba").empty();
-          for (var i = 0; i < response.length; i++) {
-            if (macho === true) {
-              if (response[i].sexo === 'Masculino') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (hembra === true) {
-              if (response[i].sexo === 'Femenino') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            } else {
-              var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-            }
-          }
-        }
-      })
-    })
-    $('#ccaa').on("change", function () {
-      var andalucia = false;
-      var aragon = false;
-      var cantabria = false;
-      var cmancha = false;
-      var cleon = false;
-      var cataluña = false;
-      var ceuta = false;
-      var madrid = false;
-      var navarra = false;
-      var valencia = false;
-      var extremadura = false;
-      var galicia = false;
-      var baleares = false;
-      var canarias = false;
-      var rioja = false;
-      var melilla = false;
-      var paisvasco = false;
-      var asturias = false;
-      var murcia = false;
-      if ($('#fandalucia').is(':checked')) {
-        andalucia = true;
-      }
-      if ($('#faragon').is(':checked')) {
-        aragon = true;
-      }
-      if ($('#fcantabria').is(':checked')) {
-        cantabria = true;
-      }
-      if ($('#fmancha').is(':checked')) {
-        cmancha = true;
-      }
-      if ($('#fleon').is(':checked')) {
-        cleon = true;
-      }
-      if ($('#fcataluña').is(':checked')) {
-        cataluña = true;
-      }
-      if ($('#fmadrid').is(':checked')) {
-        madrid = true;
-      }
-      if ($('#fnavarra').is(':checked')) {
-        navarra = true;
-      }
-      if ($('#fvalencia').is(':checked')) {
-        valencia = true;
-      }
-      if ($('#fextremadura').is(':checked')) {
-        extremadura = true;
-      }
-      if ($('#fgalicia').is(':checked')) {
-        galicia = true;
-      }
-      if ($('#fbaleares').is(':checked')) {
-        baleares = true;
-      }
-      if ($('#fcanarias').is(':checked')) {
-        canarias = true;
-      }
-      if ($('#frioja').is(':checked')) {
-        rioja = true;
-      }
-      if ($('#fmelilla').is(':checked')) {
-        melilla = true;
-      }
-      if ($('#fpaisvasco').is(':checked')) {
-        paisvasco = true;
-      }
-      if ($('#fasturias').is(':checked')) {
-        asturias = true;
-      }
-      if ($('#fmurcia').is(':checked')) {
-        murcia = true;
-      }
-      $.ajax({
-        type: 'GET',
-        url: 'http://127.0.0.1:8000/adp',
-        success: function (response) {
-          $("#prueba").empty();
-          for (var i = 0; i < response.length; i++) {
-            if (andalucia === true) {
-              if (response[i].cuidad === 'Andalucia') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (aragon === true) {
-              if (response[i].cuidad === 'Aragón') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (cantabria === true) {
-              if (response[i].cuidad === 'Cantabria') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (cmancha === true) {
-              if (response[i].cuidad === 'Castilla-La Mancha') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (cleon === true) {
-              if (response[i].cuidad === 'Castilla y León') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (cataluña === true) {
-              if (response[i].cuidad === 'Cataluña') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (ceuta === true) {
-              if (response[i].cuidad === 'Ceuta') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (madrid === true) {
-              if (response[i].cuidad === 'Comunidad de Madrid') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (navarra === true) {
-              if (response[i].cuidad === 'Comunidad Foral de Navarra') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (valencia === true) {
-              if (response[i].cuidad === 'Comunidad Valenciana') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (extremadura === true) {
-              if (response[i].cuidad === 'Extremadura') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (galicia === true) {
-              if (response[i].cuidad === 'Galicia') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (baleares === true) {
-              if (response[i].cuidad === 'Islas Baleares') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (canarias === true) {
-              if (response[i].cuidad === 'Islas Canarias') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (rioja === true) {
-              if (response[i].cuidad === 'La Rioja') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (melilla === true) {
-              if (response[i].cuidad === 'Melilla') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (paisvasco === true) {
-              if (response[i].cuidad === 'País Vasco') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (asturias === true) {
-              if (response[i].cuidad === 'Principado de Asturias') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            }
-            else if (murcia === true) {
-              if (response[i].cuidad === 'Región de Murcia') {
-                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-              }
-            } else {
-              var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
-            "</h5><p class='card-text'>" + response[i].detalles +
-            "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
-            "'>Ficha</button></div></div></div>";
-                $("#prueba").append(card)
-            }
-          }
-        }
-      })
-    })
-  })
-  $(document).on("click", "#botonficha", function () {
-    var id = $(this).data("id")
-    $.ajax({
-      type: 'GET',
-      url: 'http://127.0.0.1:8000/adp/' + id,
-      success: function (response) {
-        $('#foto1').empty();
-        $('#foto2').empty();
-        $('#foto3').empty();
-        $('#adpid').val(response.adopcion.id)
-        $('#foto1').append("<img class='rounded d-block w-100' style='height:400px' src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_1 + "'></img>")
-        $('#foto2').append("<img class='rounded d-block w-100' style='height:400px' src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_2 + "'></img>")
-        $('#foto3').append("<img class='rounded d-block w-100' style='height:400px' src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_3 + "'></img>")
+                for (var i = 0; i < response.length; i++) {
 
-        if (response.adopcion.usuarios_id === localStorage.getItem("username")) {
-          var editar = "<button type='button' class='btn btn-warning' id='btnimg' data-id='" + response.adopcion.id + "'>Subir imágenes</button>"
-          var success = "<button type='button' class='btn btn-success'id='modaladp'>Adoptado</button>"
-          $('#btn-adp').empty();
-          $('#btn-adp').append(success);
-          $('#editar').empty();
-          $('#editar').append(editar);
-        }
-        $('#titulo').empty();
-        $('#titulo').append(response.adopcion.nombre)
-        $('#tipo').empty();
-        $('#tipo').append('Tipo:  ' + response.adopcion.tipo)
-        $('#raza').empty();
-        $('#raza').append('Raza:  ' + response.adopcion.raza)
-        $('#edad').empty();
-        $('#edad').append('Edad:  ' + response.adopcion.edad)
-        $('#sexo').empty();
-        $('#sexo').append('Sexo:  ' + response.adopcion.sexo)
-        $('#c_a').empty();
-        $('#c_a').append('CCAA:  ' + response.adopcion.cuidad)
-        $('#provincia').empty();
-        $('#provincia').append('Provincia:  ' + response.adopcion.provincia)
-        $('#sms').removeAttr("user-id");
-        $('#sms').attr("user-id", response.adopcion.usuarios_id)
-        $('#adoptedby').empty();
-        if(response.adopcion.adoptedby_id != null){
-          $('#adoptedby').append('Adoptado por:  ' + response.adopcion.adoptedby_id)
-        } else {
-        $('#adoptedby').append('Adoptado por:   Aún no ha sido adoptado!' )
-        }
-      }
-    })
-    $(document).on("click", "#sms", function () {
-      var user = $('#sms').attr("user-id")
-      $('#destinatario').val(user)
-    })
-    $(document).on("click", "#enviarsms", function () {
-      var destinatario = $('#destinatario').val()
-      var texto = $('#texto').val()
-      var titulo = $('#titulomsj').val()
-      var json = {
-        'to_users_id': destinatario,
-        'titulo': titulo,
-        'contenido': texto,
-      }
-      $.ajax({
-        type: 'POST',
-        url: 'http://127.0.0.1:8000/msj',
-        headers: {
-          Authorization: localStorage.getItem("token")
-        },
-        data: {
-          json: JSON.stringify(json)
-        },
-        success: function (response) {
-          if (response.code === 200) {
-            alert("Mensaje enviado correctamente.")
-            document.location.href = "principal.html";
-          }
-          else {
-            alert(response.message)
-          }
-        }
-      })
-    })
-  })
-  $(document).on("click", '#btnimg', function () {
-    $(this).data('id')
-    $("#formimg").data('id', $(this).data('id'))
-    $('#editarfotos').modal("show")
-  })
-  $("#formimg").on("submit", function (e) {
-    e.preventDefault()
-    var id = $(this).data('id');   // usar esto para las fotos de editar ficha
-    var prueba = 'http://127.0.0.1:8000/adp/new/img/' + id
-    var fd = new FormData();
-    var file0 = $("#file1")[0].files[0];
-    if (typeof (file0) !== 'undefined') {
-      fd.append('file0', file0);
-    }
-    var file1 = $("#file2")[0].files[0];
-    if (typeof (file1) !== 'undefined') {
-      fd.append('file1', file1);
-    }
-    var file2 = $("#file3")[0].files[0];
-    if (typeof (file2) !== 'undefined') {
-      fd.append('file2', file2);
-    }
+                    var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img class='rounded' src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body text-center'><h5 class='card-title'>" + response[i].nombre +
+                        "</h5><p class='card-text'>" + response[i].detalles +
+                        "</p><div class='botonficha text-center'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                        "'>Ficha</button></div></div></div>";
+                    $("#prueba").append(card)
+                }
+            }
+        })
+        $('#animal').on("change", function () {
+            var perro = false;
+            var gato = false;
+            var pajaro = false;
+            var iguana = false;
+            var otro = false;
+            if ($('#perro').is(':checked')) {
+                perro = true;
+            }
+            if ($('#gato').is(':checked')) {
+                gato = true;
+            }
+            if ($('#pajaro').is(':checked')) {
+                pajaro = true;
+            }
+            if ($('#iguana').is(':checked')) {
+                iguana = true;
+            }
+            if ($('#otro').is(':checked')) {
+                otro = true;
+            }
+            $.ajax({
+                type: 'GET',
+                url: 'http://127.0.0.1:8000/adp',
+                success: function (response) {
+                    $("#prueba").empty();
+                    for (var i = 0; i < response.length; i++) {
+                        if (perro === true) {
+                            if (response[i].tipo === 'Perro') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (gato === true) {
+                            if (response[i].tipo === 'Gato') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (pajaro === true) {
+                            if (response[i].tipo === 'Pajaro') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (iguana === true) {
+                            if (response[i].tipo === 'Iguana') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (otro === true) {
+                            if (response[i].tipo === 'Otro') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else {
+                            var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                "</h5><p class='card-text'>" + response[i].detalles +
+                                "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                "'>Ficha</button></div></div></div>";
+                            $("#prueba").append(card)
 
-    $.ajax({
-      url: 'http://127.0.0.1:8000/adp/new/img/' + id,
-      headers: {
-        Authorization: localStorage.getItem("token")
-      },
-      type: 'POST',
-      data: fd,
-      contentType: false,
-      processData: false,
-      success: function (response) {
-        if (response.code === 200) {
-          alert('Se han subido correctamente.')
-          document.location.href = "principal.html";
-        } if (response.code === 404) {
-          alert('No se han podido subir las imágenes correctamente, vuelve a intentarlo.')
-         
+                        }
+                    }
+                }
+            })
+        })
+        $('#sexobusc').on("change", function () {
+            var macho = false;
+            var hembra = false;
+            if ($('#macho').is(':checked')) {
+                macho = true;
+            }
+            if ($('#hembra').is(':checked')) {
+                hembra = true;
+            }
+            $.ajax({
+                type: 'GET',
+                url: 'http://127.0.0.1:8000/adp',
+                success: function (response) {
+                    $("#prueba").empty();
+                    for (var i = 0; i < response.length; i++) {
+                        if (macho === true) {
+                            if (response[i].sexo === 'Masculino') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (hembra === true) {
+                            if (response[i].sexo === 'Femenino') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else {
+                            var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                "</h5><p class='card-text'>" + response[i].detalles +
+                                "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                "'>Ficha</button></div></div></div>";
+                            $("#prueba").append(card)
+                        }
+                    }
+                }
+            })
+        })
+        $('#ccaa').on("change", function () {
+            var andalucia = false;
+            var aragon = false;
+            var cantabria = false;
+            var cmancha = false;
+            var cleon = false;
+            var cataluña = false;
+            var ceuta = false;
+            var madrid = false;
+            var navarra = false;
+            var valencia = false;
+            var extremadura = false;
+            var galicia = false;
+            var baleares = false;
+            var canarias = false;
+            var rioja = false;
+            var melilla = false;
+            var paisvasco = false;
+            var asturias = false;
+            var murcia = false;
+            if ($('#fandalucia').is(':checked')) {
+                andalucia = true;
+            }
+            if ($('#faragon').is(':checked')) {
+                aragon = true;
+            }
+            if ($('#fcantabria').is(':checked')) {
+                cantabria = true;
+            }
+            if ($('#fmancha').is(':checked')) {
+                cmancha = true;
+            }
+            if ($('#fleon').is(':checked')) {
+                cleon = true;
+            }
+            if ($('#fcataluña').is(':checked')) {
+                cataluña = true;
+            }
+            if ($('#fmadrid').is(':checked')) {
+                madrid = true;
+            }
+            if ($('#fnavarra').is(':checked')) {
+                navarra = true;
+            }
+            if ($('#fvalencia').is(':checked')) {
+                valencia = true;
+            }
+            if ($('#fextremadura').is(':checked')) {
+                extremadura = true;
+            }
+            if ($('#fgalicia').is(':checked')) {
+                galicia = true;
+            }
+            if ($('#fbaleares').is(':checked')) {
+                baleares = true;
+            }
+            if ($('#fcanarias').is(':checked')) {
+                canarias = true;
+            }
+            if ($('#frioja').is(':checked')) {
+                rioja = true;
+            }
+            if ($('#fmelilla').is(':checked')) {
+                melilla = true;
+            }
+            if ($('#fpaisvasco').is(':checked')) {
+                paisvasco = true;
+            }
+            if ($('#fasturias').is(':checked')) {
+                asturias = true;
+            }
+            if ($('#fmurcia').is(':checked')) {
+                murcia = true;
+            }
+            $.ajax({
+                type: 'GET',
+                url: 'http://127.0.0.1:8000/adp',
+                success: function (response) {
+                    $("#prueba").empty();
+                    for (var i = 0; i < response.length; i++) {
+                        if (andalucia === true) {
+                            if (response[i].cuidad === 'Andalucia') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (aragon === true) {
+                            if (response[i].cuidad === 'Aragón') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (cantabria === true) {
+                            if (response[i].cuidad === 'Cantabria') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (cmancha === true) {
+                            if (response[i].cuidad === 'Castilla-La Mancha') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (cleon === true) {
+                            if (response[i].cuidad === 'Castilla y León') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (cataluña === true) {
+                            if (response[i].cuidad === 'Cataluña') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (ceuta === true) {
+                            if (response[i].cuidad === 'Ceuta') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (madrid === true) {
+                            if (response[i].cuidad === 'Comunidad de Madrid') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (navarra === true) {
+                            if (response[i].cuidad === 'Comunidad Foral de Navarra') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (valencia === true) {
+                            if (response[i].cuidad === 'Comunidad Valenciana') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (extremadura === true) {
+                            if (response[i].cuidad === 'Extremadura') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (galicia === true) {
+                            if (response[i].cuidad === 'Galicia') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (baleares === true) {
+                            if (response[i].cuidad === 'Islas Baleares') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (canarias === true) {
+                            if (response[i].cuidad === 'Islas Canarias') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (rioja === true) {
+                            if (response[i].cuidad === 'La Rioja') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (melilla === true) {
+                            if (response[i].cuidad === 'Melilla') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (paisvasco === true) {
+                            if (response[i].cuidad === 'País Vasco') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (asturias === true) {
+                            if (response[i].cuidad === 'Principado de Asturias') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else if (murcia === true) {
+                            if (response[i].cuidad === 'Región de Murcia') {
+                                var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                    "</h5><p class='card-text'>" + response[i].detalles +
+                                    "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                    "'>Ficha</button></div></div></div>";
+                                $("#prueba").append(card)
+                            }
+                        } else {
+                            var card = "<div class='card float-left mt-3 mr-3 ' style='width:18rem;'><img src=' http://127.0.0.1:8000/adp/img/" + response[i].image_1 + "' class='card-img-top' style='height:200px'><div class='card-body'><h5 class='card-title'>" + response[i].nombre +
+                                "</h5><p class='card-text'>" + response[i].detalles +
+                                "</p><div class='botonficha'><button type='button' class='btn btn-primary' id='botonficha' data-toggle='modal' data-target='#exampleModalLong' data-id='" + response[i].id +
+                                "'>Ficha</button></div></div></div>";
+                            $("#prueba").append(card)
+                        }
+                    }
+                }
+            })
+        })
+    })
+    $(document).on("click", "#botonficha", function () {
+        var id = $(this).data("id")
+        $.ajax({
+            type: 'GET',
+            url: 'http://127.0.0.1:8000/adp/' + id,
+            success: function (response) {
+                $('#foto1').empty();
+                $('#foto2').empty();
+                $('#foto3').empty();
+                $('#adpid').val(response.adopcion.id)
+                $('#foto1').append("<img class='rounded d-block w-100' style='height:400px' src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_1 + "'></img>")
+                $('#foto2').append("<img class='rounded d-block w-100' style='height:400px' src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_2 + "'></img>")
+                $('#foto3').append("<img class='rounded d-block w-100' style='height:400px' src='http://127.0.0.1:8000/adp/img/" + response.adopcion.image_3 + "'></img>")
+
+                if (response.adopcion.usuarios_id === localStorage.getItem("username")) {
+                    var editar = "<button type='button' class='btn btn-warning' id='btnimg' data-id='" + response.adopcion.id + "'>Subir imágenes</button>"
+                    var success = "<button type='button' class='btn btn-success'id='modaladp'>Adoptado</button>"
+                    $('#btn-adp').empty();
+                    $('#btn-adp').append(success);
+                    $('#editar').empty();
+                    $('#editar').append(editar);
+                }
+                $('#titulo').empty();
+                $('#titulo').append(response.adopcion.nombre)
+                $('#tipo').empty();
+                $('#tipo').append('Tipo:  ' + response.adopcion.tipo)
+                $('#raza').empty();
+                $('#raza').append('Raza:  ' + response.adopcion.raza)
+                $('#edad').empty();
+                $('#edad').append('Edad:  ' + response.adopcion.edad)
+                $('#sexo').empty();
+                $('#sexo').append('Sexo:  ' + response.adopcion.sexo)
+                $('#c_a').empty();
+                $('#c_a').append('CCAA:  ' + response.adopcion.cuidad)
+                $('#provincia').empty();
+                $('#provincia').append('Provincia:  ' + response.adopcion.provincia)
+                $('#sms').removeAttr("user-id");
+                $('#sms').attr("user-id", response.adopcion.usuarios_id)
+                $('#adoptedby').empty();
+                if (response.adopcion.adoptedby_id != null) {
+                    $('#adoptedby').append('Adoptado por:  ' + response.adopcion.adoptedby_id)
+                } else {
+                    $('#adoptedby').append('Adoptado por:   Aún no ha sido adoptado!')
+                }
+            }
+        })
+        $(document).on("click", "#sms", function () {
+            var user = $('#sms').attr("user-id")
+            $('#destinatario').val(user)
+        })
+        $(document).on("click", "#enviarsms", function () {
+            var destinatario = $('#destinatario').val()
+            var texto = $('#texto').val()
+            var titulo = $('#titulomsj').val()
+            var json = {
+                'to_users_id': destinatario,
+                'titulo': titulo,
+                'contenido': texto,
+            }
+            $.ajax({
+                type: 'POST',
+                url: 'http://127.0.0.1:8000/msj',
+                headers: {
+                    Authorization: localStorage.getItem("token")
+                },
+                data: {
+                    json: JSON.stringify(json)
+                },
+                success: function (response) {
+                    if (response.code === 200) {
+                        alert("Mensaje enviado correctamente.")
+                        document.location.href = "principal.html";
+                    } else {
+                        alert(response.message)
+                    }
+                }
+            })
+        })
+    })
+    $(document).on("click", '#btnimg', function () {
+        $(this).data('id')
+        $("#formimg").data('id', $(this).data('id'))
+        $('#editarfotos').modal("show")
+    })
+    $("#formimg").on("submit", function (e) {
+        e.preventDefault()
+        var id = $(this).data('id');   // usar esto para las fotos de editar ficha
+        var prueba = 'http://127.0.0.1:8000/adp/new/img/' + id
+        var fd = new FormData();
+        var file0 = $("#file1")[0].files[0];
+        if (typeof (file0) !== 'undefined') {
+            fd.append('file0', file0);
+        }
+        var file1 = $("#file2")[0].files[0];
+        if (typeof (file1) !== 'undefined') {
+            fd.append('file1', file1);
+        }
+        var file2 = $("#file3")[0].files[0];
+        if (typeof (file2) !== 'undefined') {
+            fd.append('file2', file2);
         }
 
-      }
+        $.ajax({
+            url: 'http://127.0.0.1:8000/adp/new/img/' + id,
+            headers: {
+                Authorization: localStorage.getItem("token")
+            },
+            type: 'POST',
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                if (response.code === 200) {
+                    alert('Se han subido correctamente.')
+                    document.location.href = "principal.html";
+                }
+                if (response.code === 404) {
+                    alert('No se han podido subir las imágenes correctamente, vuelve a intentarlo.')
+
+                }
+
+            }
+        })
     })
-  })
-  $(document).on("click", "#modaladp", function(){
-    $("#adoptar").modal("show")
-  })
-  $(document).on("click", "#saveadp", function(){
-    var id=$('#adpid').val()
-    var user= $("#adoptado").val()
-    var json= {
-      "adpid": id,
-      "adp_usr_id": user,
-    }
-    $.ajax({
-      type: 'POST',
-      url: 'http://127.0.0.1:8000/adp/new',
-      data: {
-        json: JSON.stringify(json)
-      },
-      headers: {
-        Authorization: localStorage.getItem('token')
-      },
-      success: function(response){
-        if(response.code === 200){
-        alert(response.message)
-        document.location.href = "principal.html";
+    $(document).on("click", "#modaladp", function () {
+        $("#adoptar").modal("show")
+    })
+    $(document).on("click", "#saveadp", function () {
+        var id = $('#adpid').val()
+        var user = $("#adoptado").val()
+        var json = {
+            "adpid": id,
+            "adp_usr_id": user,
         }
-      else{
-        alert(response.message)
-      }
-     
-    
-      }
+        $.ajax({
+            type: 'POST',
+            url: 'http://127.0.0.1:8000/adp/new',
+            data: {
+                json: JSON.stringify(json)
+            },
+            headers: {
+                Authorization: localStorage.getItem('token')
+            },
+            success: function (response) {
+                if (response.code === 200) {
+                    alert(response.message)
+                    document.location.href = "principal.html";
+                } else {
+                    alert(response.message)
+                }
+
+
+            }
+        })
     })
-  })
 
 
 </script>

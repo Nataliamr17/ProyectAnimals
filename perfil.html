@@ -4,251 +4,270 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyect Animals</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+          integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-12">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="principal.html"><img src="img/logo.png" width="100px" class="ml-5"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
-                      <ul class="navbar-nav justify-content-between">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="principal.html"><img src="img/logo.png" width="100px" class="ml-5"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
+                    <ul class="navbar-nav justify-content-between">
                         <li class="nav-item active mr-3">
-                          <a class="nav-link" href="principal.html"><h4>INICIO</h4></a>
+                            <a class="nav-link" href="principal.html"><h4>INICIO</h4></a>
                         </li>
                         <li class="nav-item mr-3">
-                          <a class="nav-link" href="ficha.html"><h4>CREAR FICHA</h4></a>
+                            <a class="nav-link" href="ficha.html"><h4>CREAR FICHA</h4></a>
                         </li>
                         <li class="nav-item mr-3">
-                          <a class="nav-link" href="perfil.html"><h4>TU PERFIL</h4></a>
+                            <a class="nav-link" href="perfil.html"><h4>TU PERFIL</h4></a>
                         </li>
                         <li class="nav-item mr-3">
-                          <a class="nav-link" href="mensajes.html"><h4>MENSAJES</h4></a>
+                            <a class="nav-link" href="mensajes.html"><h4>MENSAJES</h4></a>
                         </li>
-                      </ul>
-                      <span class="navbar-text">
+                    </ul>
+                    <span class="navbar-text">
                         <div id="datosusu"> 
                         </div>
                         
                       </span>
-                    </div>
-                  </nav>
-            </div>
-        </div><br><br>
-          <div class="row justify-content-center ">
-            <div class="col-4 bg-light ">
-              <br>
-            <div id="foto" >
+                </div>
+            </nav>
+        </div>
+    </div>
+    <br><br>
+    <div class="row justify-content-center ">
+        <div class="col-4 bg-light ">
+            <br>
+            <div id="foto">
 
             </div>
-              <br><br>
-            </div>
-            <div class="col-4 bg-light">
-              <br>
-                  <p id="user">Usuario: </p>
-                  <input type="hidden" id="idusuario">
-                  <p id="Nombre">Nombre: </p>       
-                  <p id="Apellidos">Apellidos: </p>
-                  <p id="Correo">Correo Electrónico: </p>
-                  <p id="Tlf">Teléfono: </p>
-                  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter" id="botonedit">Editar</button>
-                  <button type="button" id="idusuario" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Subir imagen
-                  </button><br><br>
-            </div>
-          </div>
+            <br><br>
         </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
+        <div class="col-4 bg-light">
+            <br>
+            <p id="user">Usuario: </p>
+            <input type="hidden" id="idusuario">
+            <p id="Nombre">Nombre: </p>
+            <p id="Apellidos">Apellidos: </p>
+            <p id="Correo">Correo Electrónico: </p>
+            <p id="Tlf">Teléfono: </p>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter"
+                    id="botonedit">Editar
+            </button>
+            <button type="button" id="idusuario" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                Subir imagen
+            </button>
+            <br><br>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Sube tus imágenes</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
-              </div>
-              <form id="formimg">
-              <div class="modal-body">
-                  <input type="file" id="file0">
-                </div>
-      
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" id="subirimg">Subir imágenes</button>
-              </div>
-              </form>
             </div>
-          </div>
+            <form id="formimg">
+                <div class="modal-body">
+                    <input type="file" id="file0">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" id="subirimg">Subir imágenes</button>
+                </div>
+            </form>
         </div>
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalCenterTitle">Editar</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
-              </div>
-              <div class="modal-body">
+            </div>
+            <div class="modal-body">
                 <div class="formulario">
-                  <h2>Edita tus datos</h2>
-                  
-                  <input type="text" placeholder="Nombre" name="nombre" id="nombremodal" required>
-                  <input type="text" placeholder="Apellidos" name="apellidos" id="apellidosmodal" required>
-                  <input type="email" placeholder="Correo Electronico" name="email" id="emailmodal" required>
-                  <input type="number" placeholder="Teléfono" name="tlf" id="tlfmodal" required>
-                  <div id="respuesta"></div>
-                
-              </div>
-              </div>
-              <div class="modal-footer">
+                    <h2>Edita tus datos</h2>
+
+                    <input type="text" placeholder="Nombre" name="nombre" id="nombremodal" required>
+                    <input type="text" placeholder="Apellidos" name="apellidos" id="apellidosmodal" required>
+                    <input type="email" placeholder="Correo Electronico" name="email" id="emailmodal" required>
+                    <input type="number" placeholder="Teléfono" name="tlf" id="tlfmodal" required>
+                    <div id="respuesta"></div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 <button type="button" id="cambioperfil" class="btn btn-primary">Guardar cambios</button>
-              </div>
             </div>
-          </div>
         </div>
-        <footer class="page-footer font-small bg-white pt-4 ">
+    </div>
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small bg-white pt-4 fixed-bottom">
 
-          <div class="container-fluid text-center text-md-left">
-            <div class="row">
-              <div class="col-md-4 mt-md-0 mt-3 text-center">
-        
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <div class="col-md-4 mt-md-0 mt-3 text-center">
+
                 <h5 class="text-uppercase"><strong> PROYECT ANIMALS</strong></h5>
                 <p>¡¡ Tu web para dar o adoptar !!</p>
-              </div>
-              <hr class="clearfix w-100 d-md-none pb-3">
-              <div class="col-md-4 mb-md-0 mb-3 text-center">
-                <img src="img/logo.png" width="80px" class="ml-5"> 
-              </div>
-                <div class="col-md-4 mb-md-0 mb-3">
-        
+            </div>
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <div class="col-md-4 mb-md-0 mb-3 text-center">
+                <img src="img/logo.png" width="80px" class="ml-5">
+            </div>
+            <div class="col-md-4 mb-md-0 mb-3">
+
                 <h5 class="text-uppercase"><strong>Nuestras RRSS</strong></h5>
                 <i class="fab fa-facebook-f mr-2"></i>
                 <i class="fab fa-twitter mr-2"></i>
                 <i class="fab fa-youtube mr-2"></i>
                 <i class="far fa-envelope mr-2"></i>
                 <i class="fab fa-instagram mr-2"></i>
-              </div>
-           
             </div>
-           </div>
-         </footer>
+
+        </div>
+    </div>
+</footer>
 
 
-        <script src="js/jquery-3.1.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 <script>
 
-$(document).ready(function(){
-  if(localStorage.getItem("username") !== "undefined"){
-      $("#datosusu").html("Bienvenido: "+localStorage.getItem("username")+' ! <i class="fas fa-sign-out-alt" id="logout"></i>')
-    }
-      $(document).on("click","#logout",function(){
-        localStorage.removeItem("token")
-        localStorage.removeItem("userid")
-        localStorage.removeItem("username")
-        alert("Sesión cerrada.")/* to do: Cambiar redirect por entradas dinamicas de li en funcion de si esta logged o no*/
-        document.location.href="index.html";
-      })
-  
-    $.ajax({
-          type: 'GET',
-          url: 'http://127.0.0.1:8000/users/'+localStorage.getItem("userid"),
-          success:function(response){
-           
-            $("#idusuario").val(response.user.id);
-            $("#user").append(response.user.user);
-            $("#Nombre").append(response.user.nombre);
-            $("#Apellidos").append(response.user.apellidos);
-            $("#Correo").append(response.user.email);
-            $("#Tlf").append(response.user.telefono);
-            $("#foto").append("<img  class='img-fluid' src='http://127.0.0.1:8000/users/getimage/"+ response.user.image+"'></img>");
-           
-
-          }
-        })
-})
-$("#formimg").on("submit", function(e){
-        e.preventDefault()
-            var id= $("#idusuario").val();
-            
-            var fd = new FormData();
-            var file0 = $("#file0")[0].files[0];
-            if(typeof(file0)!=='undefined'){
-                fd.append('file0', file0);
-            }
-
-            $.ajax({
-        url:'http://127.0.0.1:8000/users/image',
-        headers:{
-            Authorization:localStorage.getItem("token")
-        },
-        type: 'POST',
-        data: fd,
-        contentType: false,
-        processData: false,
-        success: function(response){
-            if(response.code===200){
-                alert('Se han subido correctamente.')
-                document.location.href="perfil.html";
-            }if (response.code===404){
-                alert('No se han podido subir las imágenes correctamente, vuelve a intentarlo.')
-            }
-
+    $(document).ready(function () {
+        if (localStorage.getItem("username") !== "undefined") {
+            $("#datosusu").html("Bienvenido: " + localStorage.getItem("username") + ' ! <i class="fas fa-sign-out-alt" id="logout"></i>')
         }
+        $(document).on("click", "#logout", function () {
+            localStorage.removeItem("token")
+            localStorage.removeItem("userid")
+            localStorage.removeItem("username")
+            alert("Sesión cerrada.")/* to do: Cambiar redirect por entradas dinamicas de li en funcion de si esta logged o no*/
+            document.location.href = "index.html";
+        })
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://127.0.0.1:8000/users/' + localStorage.getItem("userid"),
+            success: function (response) {
+
+                $("#idusuario").val(response.user.id);
+                $("#user").append(response.user.user);
+                $("#Nombre").append(response.user.nombre);
+                $("#Apellidos").append(response.user.apellidos);
+                $("#Correo").append(response.user.email);
+                $("#Tlf").append(response.user.telefono);
+                $("#foto").append("<img  class='img-fluid' src='http://127.0.0.1:8000/users/getimage/" + response.user.image + "'></img>");
+
+
+            }
+        })
     })
-  })
-/*FUNCION COGER DATOS PERFIL*/
-$("#botonedit").on("click", function(){
-  
-  $.ajax({
-    type: 'GET',
-    url:'http://127.0.0.1:8000/users/'+localStorage.getItem("userid"),
-    success:function(response){
-     
-      $("#usuariomodal").val(response.user.user)
-      $("#nombremodal").val(response.user.nombre)
-      $("#apellidosmodal").val(response.user.apellidos)
-      $("#emailmodal").val(response.user.email)
-      $("#tlfmodal").val(response.user.telefono)
-    }
-    
+    $("#formimg").on("submit", function (e) {
+        e.preventDefault()
+        var id = $("#idusuario").val();
+
+        var fd = new FormData();
+        var file0 = $("#file0")[0].files[0];
+        if (typeof (file0) !== 'undefined') {
+            fd.append('file0', file0);
+        }
+
+        $.ajax({
+            url: 'http://127.0.0.1:8000/users/image',
+            headers: {
+                Authorization: localStorage.getItem("token")
+            },
+            type: 'POST',
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                if (response.code === 200) {
+                    alert('Se han subido correctamente.')
+                    document.location.href = "perfil.html";
+                }
+                if (response.code === 404) {
+                    alert('No se han podido subir las imágenes correctamente, vuelve a intentarlo.')
+                }
+
+            }
+        })
     })
-})
-  /*FUNCION CAMBIAR PERFIL*/
-  $("#cambioperfil").on("click",function(){
-    var nom1 =  $("#nombremodal").val()
-    var ape1 = $("#apellidosmodal").val()
-    var email =  $("#emailmodal").val()
-    var tele1 =  $("#tlfmodal").val()
-    var json = {
-      "nombre":nom1,"apellidos":ape1,"email":email,"telefono":tele1
-    }
-    $.ajax({
-    type: 'PUT',
-    data: {
-      "json":JSON.stringify(json)
-    },
-    url:'http://127.0.0.1:8000/users',
-    headers:{
-            Authorization:localStorage.getItem("token")
-        },
-    success:function(response){
-      alert("Los datos han sido modificados de forma satisfactoria, se redireccionará a su perfil.")
-      document.location.href = "perfil.html";
-     
-    }
-    
+    /*FUNCION COGER DATOS PERFIL*/
+    $("#botonedit").on("click", function () {
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://127.0.0.1:8000/users/' + localStorage.getItem("userid"),
+            success: function (response) {
+
+                $("#usuariomodal").val(response.user.user)
+                $("#nombremodal").val(response.user.nombre)
+                $("#apellidosmodal").val(response.user.apellidos)
+                $("#emailmodal").val(response.user.email)
+                $("#tlfmodal").val(response.user.telefono)
+            }
+
+        })
     })
-  })
+    /*FUNCION CAMBIAR PERFIL*/
+    $("#cambioperfil").on("click", function () {
+        var nom1 = $("#nombremodal").val()
+        var ape1 = $("#apellidosmodal").val()
+        var email = $("#emailmodal").val()
+        var tele1 = $("#tlfmodal").val()
+        var json = {
+            "nombre": nom1, "apellidos": ape1, "email": email, "telefono": tele1
+        }
+        $.ajax({
+            type: 'PUT',
+            data: {
+                "json": JSON.stringify(json)
+            },
+            url: 'http://127.0.0.1:8000/users',
+            headers: {
+                Authorization: localStorage.getItem("token")
+            },
+            success: function (response) {
+                alert("Los datos han sido modificados de forma satisfactoria, se redireccionará a su perfil.")
+                document.location.href = "perfil.html";
+
+            }
+
+        })
+    })
 </script>
 </html>
